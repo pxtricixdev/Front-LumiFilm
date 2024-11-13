@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumi Film</title>
     <link rel="stylesheet" href="../dist/style/main.css">
+    
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header class="homeBanner">
@@ -17,6 +24,36 @@
         <p class="homeMain__parrafo parrafo2">Disfruta de una imagen de altísima definición en nuestras pantallas gigantes y déjate envolver por un sonido envolvente Dolby Atmos que hará que sientas cada paso, cada susurro y cada explosión como si estuvieras dentro de la película.</p>
         <p class="homeMain__parrafo--semibold">¡Ven a LumiFilm y experimenta el cine como nunca antes!</p>
     </main>
+    <article class="carousel">
+        <h2 class="carousel__titulo">Últimos estrenos</h2>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img class="swiper-slide__imagen" src="../assets/images/swipercarousel/alien-romulus-pelicula-2024.webp" alt="">
+                <p class="swiper-slide__titulo">ALIEN: ROMULUS</p>
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide__imagen" src="../assets/images/swipercarousel/dune2.webp" alt="">
+                <p class="swiper-slide__titulo">DUNE: PART II</p>
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper-slide__imagen" src="../assets/images/swipercarousel/wild-robot.webp" alt="">
+                <p class="swiper-slide__titulo">ROBOT SALVAJE</p>
+            </div>
+
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        
+            <!-- If we need navigation buttons 
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            -->
+        </div>
+    </article>
     <nav class="navbar">
         <ul class="navbar__list">
             <li class="navbar__item">
@@ -41,5 +78,6 @@
             </li>
         </ul>
     </nav>
+    <script src="../scripts/swiper.js"></script>
 </body>
 </html>

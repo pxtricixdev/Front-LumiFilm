@@ -43,8 +43,49 @@
             color: $white-color;
             font-weight: 600;
             font-size: 16px;
+            margin-bottom: 20px;
         }
     }
+}
 
-    
+.carousel {
+    &__titulo {
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: $red-color;
+        margin-left: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+.swiper {
+    min-width: 300px;
+    min-height: 200px;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.swiper-slide {
+    position: relative;
+
+    &__titulo {
+        color: $white-color;
+        position: absolute;
+        bottom: 15px;
+        left: 16px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    background: $white-color !important;
+    opacity: 30% !important;
+}
+.swiper-pagination-bullet-active {
+    background: $red-color !important;
+    opacity: 100% !important;
 }
