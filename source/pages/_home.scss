@@ -1,0 +1,50 @@
+@use '../base/variables' as *;
+
+.homeBanner {
+    width: 100%;
+    height: 100%;
+    
+    &__imagen {
+      height: 230px;
+      opacity: 80%;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 60px;
+        left: 135px;
+        width: 115px;
+        height: 40px;
+    }
+}
+
+.homeMain {
+    width: 82%;
+    margin: 0 auto;
+
+    &__titulo {
+        font-weight: 500;
+        font-size: 20px;
+        color: $red-color;
+        font-style: italic;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    &__parrafo {
+        text-align: center;
+        color: $white-color;
+        font-weight: 300;
+        font-size: 14px;
+        margin-bottom: 20px;
+
+        &--semibold {
+            text-align: center;
+            color: $white-color;
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+
+    
+}
