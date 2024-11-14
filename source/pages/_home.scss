@@ -64,28 +64,111 @@
     min-height: 200px;
     width: 100%;
     margin: 0 10px;
-}
 
-.swiper-slide {
-    position: relative;
+    &-slide {
+        position: relative;
 
-    &__titulo {
-        color: $white-color;
-        position: absolute;
-        bottom: 15px;
-        left: 16px;
-        font-weight: 600;
-        font-size: 16px;
+        &__titulo {
+            color: $white-color;
+            position: absolute;
+            bottom: 15px;
+            left: 16px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+    &-pagination-bullet {
+        width: 12px !important;
+        height: 12px !important;
+        background: $white-color !important;
+        opacity: 30% !important;
+
+        &-active {
+            background: $red-color !important;
+            opacity: 100% !important;
+        }
     }
 }
 
-.swiper-pagination-bullet {
-    width: 12px !important;
-    height: 12px !important;
-    background: $white-color !important;
-    opacity: 30% !important;
+.masVisto {
+    color: $white-color;
+    margin: 35px 30px;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        grid-gap: 15px;
+    }
+
+    &__titulo {
+        color: $red-color;
+        font-size: 20px;
+        font-weight: 700;
+        padding-bottom: 5px;
+    }
+
+    &__parrafo {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    &__pelicula1 {
+        background-image: url(../../assets/images/pelis/dune_part_two.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__pelicula2 {
+        background-image: url(../../assets/images/pelis/alien_romulus_ver2.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__pelicula3 {
+        background-image: url(../../assets/images/pelis/robot.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__pelicula4 {
+        background-image: url(../../assets/images/pelis/speak.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__pelicula1, &__pelicula2, &__pelicula3, &__pelicula4 {
+        width: 149px;
+        height: 226px;
+        border-radius: 16px;
+        position: relative;
+
+        &-datos {
+            text-align: center;
+            width: 149px;
+            height: 55px;
+            background-color: $grey-color;
+            border-radius: 0 0 16px 16px;
+            position: absolute;
+            bottom: 0;
+            align-items: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            &-titulo {
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            &-genero {
+                font-size: 13px;
+            }
+        }
+    }
 }
-.swiper-pagination-bullet-active {
-    background: $red-color !important;
-    opacity: 100% !important;
-}
+
+
