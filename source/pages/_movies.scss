@@ -1,0 +1,22 @@
+@use '../base/variables' as *;
+
+.movies__title{
+    color: $white-color
+}
+
+.movie-card{
+    display: flex;
+    margin-top: 40px;
+}
+.movies__imagen{
+    width: 150px;
+    float: left;
+}
+
+.movies__content__right{
+    float: right;
+    display: flex;
+    flex-direction:column;
+}
+//letra blanca color: $white-color;
+//letra rojo  color: $red-color:

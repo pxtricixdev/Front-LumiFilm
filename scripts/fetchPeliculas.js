@@ -12,8 +12,29 @@ const fetchPeliculas = async()=> {
     }
 }
 
+ 
+const clasificacionEdad = (clasificacion) => {
+    let rutaImagenClasificacion = '';
+    switch (clasificacion) {
+        case 0:
+            rutaImagenClasificacion = '../assets/icons/edad0.svg';
+            break;
+        case 12:
+            rutaImagenClasificacion = '../assets/icons/edad12.svg';
+            break;
+        case 16:
+            rutaImagenClasificacion = '../assets/icons/edad16.svg';
+            break;
+        case 18:
+            rutaImagenClasificacion = '../assets/icons/edad18.svg';
+            break;
+    }
+}
+
+const moviesGrid = document.getElementById('movies'); 
+const moviesList = document.getElementById('moviesList')
+
 const printMovies = (movies) => {
-    const moviesGrid = document.getElementById('movies'); 
 
     movies.forEach(movie => {
         const { 
@@ -23,9 +44,10 @@ const printMovies = (movies) => {
             genero, 
             imagen 
         } = movie;
-
-        const movieCard = document.createElement('div');
+        
+        const movieCard = document.createElement('li');
         movieCard.classList.add('movie-card');
+        moviesList.appendChild(movieCard);
 
         const movieImage = document.createElement('img');
         movieImage.src = `${imagen}`;
@@ -53,12 +75,11 @@ const printMovies = (movies) => {
         <img src="../assets/icons/butaca.svg" alt="Genero"> ${genero}
         `;
         movieContentRight.appendChild(movieCategory);
-        
+       
         const moviePegi = document.createElement('div');
         moviePegi.classList.add('movies__pegi');
-        moviePegi.innerHTML = `
-        <img src="../assets/icons/butaca.svg" alt="Clasificación"> ${clasificacion}
-        `;
+        moviePegi.innerHTML = clasificacionEdad(clasificacion);
+        console.log(clasificacionEdad());
 
         movieContentRight.appendChild(moviePegi);
         movieCard.appendChild(movieContentRight);
