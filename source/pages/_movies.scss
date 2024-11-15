@@ -1,22 +1,89 @@
 @use '../base/variables' as *;
 
-.movies__title{
-    color: $white-color
-}
+header {
+    text-align: center;
+    margin: 50px 0;
+  
+    .contenedorTitulo__titulo {
+      font-size: 36px;
+      font-weight: bold;
+      color: $red-color; 
+    }
+  }
 
-.movie-card{
+.moviesList {
+    list-style: none;
+    padding: 0;
     display: flex;
-    margin-top: 40px;
-}
-.movies__imagen{
-    width: 150px;
-    float: left;
-}
-
-.movies__content__right{
-    float: right;
-    display: flex;
-    flex-direction:column;
-}
-//letra blanca color: $white-color;
-//letra rojo  color: $red-color:
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  
+    .movie-card {
+      border-radius: 10px;
+      overflow: hidden;
+      width: 500px;
+      height: 300px;
+      display: flex;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+      }
+  
+      .movies__imagen {
+        width: 200px;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 10px; 
+        margin-left: 20px;
+      }
+  
+      .movies__content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+       
+        .movies__title {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 0 0 15px;
+          text-align: left;
+          color: $white-color;
+        }
+  
+        .movies__duration,
+        .movies__category,
+        .movies__pegi {
+          display: flex;
+          align-items: center;
+          margin: 20px 0;
+  
+          img {
+            width: 22px;
+            height: 22px;
+            margin-right: 8px;
+          
+          }
+  
+          .movies__value {
+            font-size: 14px;
+            color: $white-color
+          }
+        }
+  
+        .movies__pegi {
+          margin-top: 15px;
+  
+          img {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
