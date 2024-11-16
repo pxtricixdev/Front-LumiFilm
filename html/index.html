@@ -14,16 +14,19 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
+
     <header class="homeBanner">
         <img class="homeBanner__imagen" src="../assets/images/movietheater.webp" alt="imagen de una sala de cine">
         <img class="homeBanner__logo" src="../assets/images/logo.webp" alt="logo lumifilm">
     </header>
+
     <main class="homeMain">
         <h1 class="homeMain__titulo">Tu mejor plan de cine</h1>
         <p class="homeMain__parrafo parrafo1">En LumiFilm, cada detalle está pensado para hacerte vivir el cine al máximo.</p>
         <p class="homeMain__parrafo parrafo2">Disfruta de una imagen de altísima definición en nuestras pantallas gigantes y déjate envolver por un sonido envolvente Dolby Atmos que hará que sientas cada paso, cada susurro y cada explosión como si estuvieras dentro de la película.</p>
         <p class="homeMain__parrafo--semibold">¡Ven a LumiFilm y experimenta el cine como nunca antes!</p>
     </main>
+
     <article class="carousel">
         <h2 class="carousel__titulo">Últimos estrenos</h2>
         <!-- Slider main container -->
@@ -56,33 +59,44 @@
     </article>
 
     <section class="masVisto">
-        <h2 class="masVisto__titulo">Lo más visto</h2>
+        <h3 class="masVisto__titulo">Lo más visto</h3>
         <p class="masVisto__parrafo">Las películas más vistas esta semana.</p>
         <div class="masVisto__grid">
-            <div class="masVisto__pelicula1">
-                <div class="masVisto__pelicula1-datos">
-                    <p class="masVisto__pelicula1-datos-titulo">Dune: Part II</p>
-                    <p class="masVisto__pelicula1-datos-genero">Ciencia Ficción</p>
+            <div class="masVisto__pelicula masVisto__pelicula--1">
+                <div class="masVisto__pelicula-datos">
+                    <p class="masVisto__pelicula-datos-titulo">Dune: Part II</p>
+                    <p class="masVisto__pelicula-datos-genero">Ciencia Ficción</p>
+                </div>
+            </div>            
+            <div class="masVisto__pelicula masVisto__pelicula--2">
+                <div class="masVisto__pelicula-datos">
+                    <p class="masVisto__pelicula-datos-titulo">Alien: Romulus</p>
+                    <p class="masVisto__pelicula-datos-genero">Ciencia Ficción</p>
                 </div>
             </div>
-            <div class="masVisto__pelicula2">
-                <div class="masVisto__pelicula2-datos">
-                    <p class="masVisto__pelicula2-datos-titulo">Alien: Romulus</p>
-                    <p class="masVisto__pelicula2-datos-genero">Ciencia Ficción</p>
+            <div class="masVisto__pelicula masVisto__pelicula--3">
+                <div class="masVisto__pelicula-datos">
+                    <p class="masVisto__pelicula-datos-titulo">Robot Salvaje</p>
+                    <p class="masVisto__pelicula-datos-genero">Animación</p>
                 </div>
             </div>
-            <div class="masVisto__pelicula3">
-                <div class="masVisto__pelicula3-datos">
-                    <p class="masVisto__pelicula3-datos-titulo">Robot Salvaje</p>
-                    <p class="masVisto__pelicula3-datos-genero">Animación</p>
+            <div class="masVisto__pelicula masVisto__pelicula--4">
+                <div class="masVisto__pelicula-datos">
+                    <p class="masVisto__pelicula-datos-titulo">Speak No Evil</p>
+                    <p class="masVisto__pelicula-datos-genero">Thriller</p>
                 </div>
             </div>
-            <div class="masVisto__pelicula4">
-                <div class="masVisto__pelicula4-datos">
-                    <p class="masVisto__pelicula4-datos-titulo">Speak No Evil</p>
-                    <p class="masVisto__pelicula4-datos-genero">Thriller</p>
-                </div>
-            </div>
+        </div>
+    </section>
+
+    <section class="proximamente">
+        <h3 class="proximamente__titulo">Próximamente</h3>
+        <p class="proximamente__parrafo">Estrenos que vienen en camino.</p>
+        <div class="proximamente__grid">
+            <div class="proximamente__elemento proximamente__elemento--blancanieves"></div>
+            <div class="proximamente__elemento proximamente__elemento--gladiator"></div>
+            <div class="proximamente__elemento proximamente__elemento--wicked"></div>
+            <div class="proximamente__elemento proximamente__elemento--winnie"></div>
         </div>
     </section>
 
@@ -110,6 +124,45 @@
             </li>
         </ul>
     </nav>
+
+    <hr class="hrFooter">
+
+    <footer class="footer">
+        <nav class="footer__nav">
+            <ul class="footer__list">
+                <li class="footer__item footer__item--logo">
+                    <img src="../assets/images/logo.webp" alt="Logo de LumiFilm" class="footer__logo">
+                </li>
+                <li class="footer__item">
+                    <a href="../html/movies.html" class="footer__link">Cartelera</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">Dónde estamos</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">Contáctanos</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">Términos y condiciones</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">Política de privacidad</a>
+                </li>
+            </ul>
+            <ul class="footer__social-list">
+                <li class="footer__social-item">
+                    <img src="../assets/icons/twitter.svg" alt="Twitter" class="footer__social-icon">
+                </li>
+                <li class="footer__social-item">
+                    <img src="../assets/icons/facebook.svg" alt="Facebook" class="footer__social-icon">
+                </li>
+                <li class="footer__social-item">
+                    <img src="../assets/icons/instagram.svg" alt="Instagram" class="footer__social-icon">
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
     <script src="../scripts/swiper.js"></script>
 </body>
 </html>

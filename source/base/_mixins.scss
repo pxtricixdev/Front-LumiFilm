@@ -1,0 +1,25 @@
+//Font weight and size
+@mixin light-text($size) {
+    font-weight: 300;
+    font-size: $size;
+}
+
+@mixin regular-text($size) {
+    font-weight: 400;
+    font-size: $size;
+}
+
+@mixin medium-text($size) {
+    font-weight: 500;
+    font-size: $size;
+}
+
+@mixin semibold-text($size) {
+    font-weight: 600;
+    font-size: $size;
+}
+
+@mixin bold-text($size) {
+    font-weight: 700;
+    font-size: $size;
+}
