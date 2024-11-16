@@ -13,7 +13,8 @@
     -webkit-box-shadow: 0px 3px 21px -1px rgba(37, 15, 15, 0.35);
     -moz-box-shadow: 0px 3px 21px -1px rgba(37, 15, 15, 0.35);
     box-shadow: 0px 3px 21px -1px rgba(37, 15, 15, 0.35);
-
+    z-index: 9999;
+    
     &__list {
         width: 80%;
         display: flex;
