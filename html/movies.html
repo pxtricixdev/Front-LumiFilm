@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="../dist/style/main.css">
 </head>
 <body>
-    <header>
+    <header class="headerMovies">
         <section class = "contenedorTitulo">
             <h1 class="contenedorTitulo__titulo"> CARTELERA </h1>
         </section>
-
     </header>
+
     <nav class="navbar">
         <ul class="navbar__list">
             <li class="navbar__item">
-                <a href="/" class="navbar__link">
+                <a href="./index.html" class="navbar__link">
                     <img class="navbar__svg" src="../assets/icons/home.svg" alt="svg logo home">
                 </a>
             </li>
             <li class="navbar__item">
-                <a href="/movies" class="navbar__link">
+                <a href="./movies.html" class="navbar__link">
                     <img class="navbar__svg" src="../assets/icons/claqueta.svg" alt="svg logo peliculas">
                 </a>
             </li>
@@ -45,44 +45,6 @@
             </ul>
         </section>
     </main>
-
-    <hr class="hrFooter">
-
-    <footer class="footer">
-        <nav class="footer__nav">
-            <ul class="footer__list">
-                <li class="footer__item footer__item--logo">
-                    <img src="../assets/images/logo.webp" alt="Logo de LumiFilm" class="footer__logo">
-                </li>
-                <li class="footer__item">
-                    <a href="../html/movies.html" class="footer__link">Cartelera</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#" class="footer__link">Dónde estamos</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#" class="footer__link">Contáctanos</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#" class="footer__link">Términos y condiciones</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#" class="footer__link">Política de privacidad</a>
-                </li>
-            </ul>
-            <ul class="footer__social-list">
-                <li class="footer__social-item">
-                    <img src="../assets/icons/twitter.svg" alt="Twitter" class="footer__social-icon">
-                </li>
-                <li class="footer__social-item">
-                    <img src="../assets/icons/facebook.svg" alt="Facebook" class="footer__social-icon">
-                </li>
-                <li class="footer__social-item">
-                    <img src="../assets/icons/instagram.svg" alt="Instagram" class="footer__social-icon">
-                </li>
-            </ul>
-        </nav>
-    </footer>
 
     <script src="../scripts/fetchPeliculas.js"></script>
     <script src="../scripts/movies.js"></script>

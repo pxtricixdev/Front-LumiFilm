@@ -1,4 +1,5 @@
 @use '../base/variables' as *;
+@use '../base/mixins' as *;
 
 .movie-detail {
   display: flex;
@@ -11,12 +12,11 @@
     align-items: center;
     max-width: 100%;
     border-radius: 10px;
-    overflow: hidden; 
   }
 
   &__image {
     width: 100%;
-    max-height: 500px;
+    max-height: 460px;
     object-fit: cover;
   }
 
@@ -26,16 +26,14 @@
   }
 
   &__title {
-    font-size: 28px;
-    font-weight: bold;
+    @include bold-text(28px);
     color: $red-color;
     margin-bottom: 10px;
     text-align: left;
   }
 
   &__info {
-    font-size: 20px;
-    font-weight: bold;
+    @include semibold-text(18px);
     color: $white-color;
     margin-bottom: 20px;
 
@@ -45,8 +43,7 @@
   }
 
   &__section-title {
-    font-size: 24px;
-    font-weight: bold;
+    @include semibold-text(18px);
     color: $white-color;
     margin-top: 15px;
     margin-bottom: 10px;
@@ -54,11 +51,11 @@
 
   &__sinopsis,
   &__director {
-    font-size: 18px;
     line-height: 1.5;
     margin-bottom: 40px;
     color: $white-color;
     text-align: justify;
+    @include regular-text(15px)
   }
 
   &__actions {
@@ -70,13 +67,15 @@
   }
 
   &__button {
-    background-color: #251977;
+    width: 170px;
+    height: 50px;
+    @include semibold-text(16px);
+    background-color: $blue-color;
     color: $white-color;
     border: none;
-    padding: 20px 60px;
-    font-size: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 80px;
   }
 }
