@@ -11,5 +11,4 @@ const fetchPeliculas = async () => {
     }
 };
 
-
-
+fetchPeliculas()

@@ -18,30 +18,31 @@ const clasificacionEdad = (clasificacion) => {
 };
 
 const printMovies = (movies) => {
-
-    const moviesList = document.getElementById('moviesList'); 
+    const moviesList = document.getElementById('moviesList');
 
     movies.forEach(movie => {
-        const { 
-            titulo,
-             duracion, 
-             clasificacion,
-              genero, 
-              imagen 
-            } = movie;
+        const { id, titulo, duracion, clasificacion, genero, imagen } = movie;
 
         const movieItem = document.createElement('li');
         movieItem.classList.add('movie-card');
 
+        //hacemos la imagen que tenga enlace
+        const movieLink = document.createElement('a');
+        movieLink.href = `movieDetail.html?id=${id}`;
+        movieLink.classList.add('movie-card__link');
+
         const movieImage = document.createElement('img');
         movieImage.src = imagen;
         movieImage.classList.add('movies__imagen');
-        movieItem.appendChild(movieImage);
+        movieImage.alt = `Poster de ${titulo}`;
+        movieLink.appendChild(movieImage); 
+        movieItem.appendChild(movieLink); 
 
         const movieContent = document.createElement('div');
         movieContent.classList.add('movies__content');
 
-        const movieTitle = document.createElement('h2');
+        const movieTitle = document.createElement('a');
+        movieTitle.href = `movieDetail.html?id=${id}`; // enlace en el titulo para que te lleve a ese detalle por la id
         movieTitle.textContent = titulo;
         movieTitle.classList.add('movies__title');
         movieContent.appendChild(movieTitle);
@@ -72,3 +73,4 @@ const printMovies = (movies) => {
         moviesList.appendChild(movieItem);
     });
 };
+
