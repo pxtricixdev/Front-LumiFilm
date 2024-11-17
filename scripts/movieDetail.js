@@ -79,7 +79,12 @@ const printMovieDetail = (movie) => {
 
 const buyButton = document.getElementById('movie-detail__buy')
 const redireccionAsientos = () => {
-    window.location.href = "./movieDetail.html";
+    const movieId = new URLSearchParams(window.location.search).get('id');
+    if (movieId) {
+        window.location.href = `movieSeats.html?id=${movieId}`;
+    } else {
+        console.error('No se encontró el ID de la película en la URL.');
+    }
 }
 
 const fetchPeliculaById = async (id) => {
@@ -92,7 +97,6 @@ const fetchPeliculaById = async (id) => {
         console.log("Error fetching data for movie ID: ", error);
     }
 };
-
 
 const movieId = getMovieIdFromUrl();
 if (movieId) {
