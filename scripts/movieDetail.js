@@ -66,15 +66,21 @@ const printMovieDetail = (movie) => {
     const buyButton = document.createElement('button');
     buyButton.textContent = 'Comprar';
     buyButton.classList.add('movie-detail__button');
+    buyButton.setAttribute('id', 'movie-detail__buy');
+    buyButton.addEventListener('click', redireccionAsientos);
+
     movieActions.appendChild(buyButton);
 
     movieContent.appendChild(movieActions);
 
-   
     movieContainer.appendChild(movieContent);
     movieDetail.appendChild(movieContainer);
 };
 
+const buyButton = document.getElementById('movie-detail__buy')
+const redireccionAsientos = () => {
+    window.location.href = "./movieDetail.html";
+}
 
 const fetchPeliculaById = async (id) => {
     try {
