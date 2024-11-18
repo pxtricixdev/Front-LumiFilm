@@ -4,12 +4,11 @@
 //Banner
 .homeBanner {
     width: 100%;
-    height: 100%;
-    
-    &__imagen {
-      height: 230px;
-      opacity: 80%;
-    }
+    height: 350px;
+    background-image: url(../../assets/images/pexels-tima-miroshnichenko-7991579.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     &__logo {
         position: absolute;
