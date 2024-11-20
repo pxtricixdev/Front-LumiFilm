@@ -67,3 +67,44 @@
         margin: 0 auto;
     }
 }
+
+.sesiones__asientos {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columnas para asientos */
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.asiento {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estados del asiento */
+.asiento-libre {
+    background-image: url('../../assets/icons/butaca.svg');
+    filter: brightness(1); /* Blanco */
+}
+
+.asiento-seleccionado {
+    background-image: url('../../assets/icons/butaca.svg');
+    filter: brightness(0.5); /* Gris */
+}
+
+.asiento-ocupado {
+    background-image: url('../../assets/icons/butaca.svg');
+    filter: hue-rotate(180deg) brightness(0.6); /* Rojo */
+    cursor: not-allowed;
+}
+
+
