@@ -1,16 +1,22 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 .header {
+    width: 100%;
     color: $white-color;
-    @include semibold-text(20px);
-    padding: 10px;
+    padding: 5px;
+    font-family: "Lato", sans-serif;
+    position: fixed;
+    background-color: #38354bd3;
+    z-index: 10000;
+    font-size: 19px;
 
     &__list {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 20px;
+        gap: 35px;
         align-items: center;
     }
 
@@ -21,6 +27,8 @@
             flex-direction: row;
             align-items: center;
             gap: 10px;
+            font-weight: 400;
+ 
         }
         img {
             width: 100px;

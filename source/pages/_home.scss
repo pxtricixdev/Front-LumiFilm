@@ -21,7 +21,7 @@
 
 //Main section
 .homeMain {
-    width: 82%;
+    width: 70%;
     margin: 0 auto;
     padding: 25px 0;
 
@@ -50,6 +50,8 @@
 
 //Carousel
 .carousel {
+    max-width: 1200px;
+    margin: 0 auto;
     &__titulo {
         @include semibold-text(20px);
         text-transform: uppercase;
@@ -211,46 +213,69 @@
     }
 }
 
-//Footer
-.hrFooter {
-    border-color: $red-color;
-    opacity: 50%;
-    width: 75%;
-}
+@media only screen and (min-width: 768px) {
+    .homeMain {
+        &__titulo {
+            font-size: 26px;
+        }
 
-.footer {
-    width: 100%;
-    text-align: center;
+        &__parrafo {
+            font-size: 18px;
+        }
 
-    &__item {
-        margin: 0 auto;
-        @include regular-text(14px);
-        padding: 4px 0px;
-
-        &--logo {
-            width: 166px;
-            height: 53px;
-            margin-bottom: 10px;
+        &__parrafo--semibold {
+            font-size: 18px;
         }
     }
-
-    &__social-list {
+    .masVisto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 715px;
+        margin: 0 auto;
+        padding-top: 30px;
+    
+        &__grid {
         display: flex;
         flex-direction: row;
-        width: 40%;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        margin-bottom: 130px;
-        padding-top: 20px;
-        
+        justify-content: center;
+        gap: 40px;
+        }
     }
 
-    &__social-item {
-        img {
-            width: 30px;
-            height: 30px;
+    .proximamente {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 715px;
+        margin: 0 auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        &__grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 40px;
         }
+    }
+
+    .carousel {
+        &__titulo {
+            font-size: 24px;
+        }
+    }
+
+    .swiper-slide__titulo {
+        font-size: 24px;
     }
 }
 
+@media only screen and (min-width: 992px) {
+    
 
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
