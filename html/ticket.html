@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi Film</title>
+    <link rel="stylesheet" href="../dist/style/main.css">
+</head>
+
+<body>
+    <main class="compra">
+        <header class="compra__header">
+            <h1 class="compra__titulo">Precio de compra</h1>
+            <h2 class="compra__subtitulo">¡Ya casi tienes tus entradas!</h2>
+            <p class="compra__parrafo">Por favor, completa tus fatos para finalizar la compra y asegurar tu lugar en LumiFilm.</p>
+            <p class="compra__parrafo">Nos comprometemos a mantener segura tu información y a brindart una experiencia única en el cin</p>
+        </header>
+    
+
+        <section class="compra__section">
+            <form action="" class="compra__formulario">
+                <h3 class="compra__formulario-titulo">Datos personales</h3>
+                <div class="compra__formulario-div">
+                    <label for="">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div class="compra__formulario-div">
+                    <label for="">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+                </div>
+                <div class="compra__formulario-div">
+                    <label for="">Teléfono</label>
+                    <input type="tel" name="tel" id="tel">
+                </div>
+                <div class="compra__formulario-div">
+                    <label for="">Mail</label>
+                    <input type="email" name="email" id="email">
+                </div>
+            </form>
+            <div class="compra__resumen">
+                <span class="compra__total">TOTAL {precio}</span>
+                <span cl>Gastos de gestión e IVA incluídos</span>
+                <div class="compra__terminos"></div>
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">Acepto las Políticas de Privacidad y las Condiciones de Contratación</label>
+                </div>
+            </div>
+            <button class="compra__boton">Pagar</button>
+        </section>
+    </main>
+    
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item">
+                <a href="./index.html" class="navbar__link">
+                    <img class="navbar__svg" src="../assets/icons/home.svg" alt="svg logo home">
+                </a>
+            </li>
+            <li class="navbar__item">
+                <a href="./movies.html" class="navbar__link">
+                    <img class="navbar__svg" src="../assets/icons/claqueta.svg" alt="svg logo peliculas">
+                </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/search" class="navbar__link">
+                    <img class="navbar__svg" src="../assets/icons/buscar.svg" alt="svg logo busqueda">
+                </a>
+            </li>
+            <li class="navbar__item">
+                <a href="/" class="navbar__link">
+                    <img class="navbar__svg" src="../assets/icons/ticket.svg" alt="svg logo ticket">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
