@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,12 @@
 <body>
     <main class="compra">
         <header class="compra__header">
-            <h1 class="compra__titulo">Precio de compra</h1>
+            <h1 class="compra__titulo">Resumen de compra</h1>
             <h2 class="compra__subtitulo">¡Ya casi tienes tus entradas!</h2>
             <p class="compra__parrafo">Por favor, completa tus fatos para finalizar la compra y asegurar tu lugar en LumiFilm.</p>
-            <p class="compra__parrafo">Nos comprometemos a mantener segura tu información y a brindart una experiencia única en el cin</p>
+            <p class="compra__parrafo">Nos comprometemos a mantener segura tu información y a brindart una experiencia única en el cine.</p>
         </header>
     
-
         <section class="compra__section">
             <form action="" class="compra__formulario">
                 <h3 class="compra__formulario-titulo">Datos personales</h3>
@@ -38,14 +37,20 @@
                 </div>
             </form>
             <div class="compra__resumen">
-                <span class="compra__total">TOTAL {precio}</span>
-                <span cl>Gastos de gestión e IVA incluídos</span>
-                <div class="compra__terminos"></div>
+                <div class="compra__resumen-div">
+                    <span class="compra__total">TOTAL</span>
+                    <span class="compra__precio">€</span>
+                </div>
+                <span class="compra__gestion">Gastos de gestión e IVA incluídos</span>
+                <div class="compra__terminos">
                     <input type="checkbox" id="terms" name="terms">
                     <label for="terms">Acepto las Políticas de Privacidad y las Condiciones de Contratación</label>
                 </div>
             </div>
-            <button class="compra__boton">Pagar</button>
+            <div class="compra__boton-div">
+                <button class="compra__boton">Pagar</button>
+            </div>
+            
         </section>
     </main>
     
@@ -73,7 +78,5 @@
             </li>
         </ul>
     </nav>
-
 </body>
-
 </html>

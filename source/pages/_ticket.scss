@@ -1,0 +1,113 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.compra {
+    color: $white-color;
+    max-width: 306px;
+    margin: 0 auto;
+
+    &__titulo {
+        text-transform: uppercase;
+        font-size: 22px;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    &__subtitulo {
+        font-size: 16px;
+        color: $red-color;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    &__parrafo {
+        font-size: 13px;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    &__formulario-titulo {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 30px 0;
+    }
+
+    &__formulario-div {
+        display: flex;
+        flex-direction: column;
+        
+
+        label {
+            padding: 10px 0;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        input {
+            background: none;
+            border: 0;
+            border-bottom: 1px solid $red-color;
+            color: $white-color;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &__resumen, 
+    &__total {
+        display: block;
+    }
+
+    &__resumen {
+        margin-top: 30px;
+
+        &-div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+
+    &__gestion {
+        font-size: 11px;
+        color: $light-grey-color;
+    }
+
+    &__terminos {
+        max-width: 280px;
+
+        label {
+            font-size: 11px;
+            font-weight: 400;
+        }
+        
+    }
+
+    &__boton {
+        width: 170px;
+        height: 50px;
+        @include semibold-text(16px);
+        background-color: $blue-color;
+        color: $white-color;
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        cursor: pointer;
+
+        &-div {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+    }
+}
