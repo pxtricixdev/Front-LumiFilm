@@ -1,0 +1,139 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.entradasList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.entradas-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: bold;
+  color: $white-color;
+  margin-bottom: 15px;
+  padding: 0 25px;
+
+  &__left {
+    text-align: left;
+  }
+
+  &__right {
+    text-align: right;
+  }
+}
+
+.entrada-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: $white-color;
+
+    .entrada-card__punto {
+      font-size: 10px;
+      color: $red-color;
+      line-height: 1;
+      margin-top: 6px;
+    }
+
+    .entrada-card__text {
+      display: flex;
+      flex-direction: column;
+
+      .entrada-card__tipo {
+        font-size: 16px;
+        font-weight: bold;
+        color: $white-color;
+        display: block;
+      }
+
+      .entrada-card__precio {
+        font-size: 14px;
+        color: $white-color;
+        display: block;
+        gap: 20px
+      }
+    }
+  }
+
+  &__cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    background-color: #3a3a3a;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: fit-content;
+
+    .entrada-card__btn {
+      background-color: transparent;
+      color: $white-color;
+      border: none;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+
+      &--minus:hover,
+      &--plus:hover {
+        background-color: $red-color;
+      }
+    }
+
+    .entrada-card__quantity {
+      color: $white-color;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      width: 20px;
+    }
+  }
+}
+
+.total-container {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: $white-color;
+  }
+
+  &__note {
+    font-size: 12px;
+    color: #aaaaaa;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__btn {
+    background-color: $blue-color;
+    color: $white-color;
+    padding: 10px 35px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+  }
+}
