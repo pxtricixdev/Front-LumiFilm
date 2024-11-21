@@ -66,15 +66,26 @@ const printMovieDetail = (movie) => {
     const buyButton = document.createElement('button');
     buyButton.textContent = 'Comprar';
     buyButton.classList.add('movie-detail__button');
+    buyButton.setAttribute('id', 'movie-detail__buy');
+    buyButton.addEventListener('click', redireccionAsientos);
+
     movieActions.appendChild(buyButton);
 
     movieContent.appendChild(movieActions);
 
-   
     movieContainer.appendChild(movieContent);
     movieDetail.appendChild(movieContainer);
 };
 
+const buyButton = document.getElementById('movie-detail__buy')
+const redireccionAsientos = () => {
+    const movieId = new URLSearchParams(window.location.search).get('id');
+    if (movieId) {
+        window.location.href = `movieSeats.html?id=${movieId}`;
+    } else {
+        console.error('No se encontró el ID de la película en la URL.');
+    }
+}
 
 const fetchPeliculaById = async (id) => {
     try {
@@ -86,7 +97,6 @@ const fetchPeliculaById = async (id) => {
         console.log("Error fetching data for movie ID: ", error);
     }
 };
-
 
 const movieId = getMovieIdFromUrl();
 if (movieId) {
