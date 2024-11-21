@@ -3,7 +3,7 @@
 
 .headerMovies {
     text-align: center;
-    margin: 50px 0;
+    padding: 75px 0;
   
     .contenedorTitulo__titulo {
       @include bold-text(28px);
