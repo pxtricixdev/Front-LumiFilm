@@ -86,7 +86,6 @@ const printAsientos = (asientos) => {
     asientos.forEach(asiento => {
         const asientoDiv = document.createElement('div');
         asientoDiv.classList.add('asiento');
-        asientoDiv.textContent = `${asiento.fila}${asiento.columna}`;
 
         if (asiento.ocupado) {
             asientoDiv.classList.add('asiento-ocupado');

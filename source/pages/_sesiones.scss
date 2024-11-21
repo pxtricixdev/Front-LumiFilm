@@ -66,15 +66,15 @@
     &__pantalla {
         margin: 0 auto;
     }
-}
 
-.sesiones__asientos {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr); /* 10 columnas para asientos */
-    gap: 10px;
-    justify-content: center;
-    margin: 20px auto;
-    width: fit-content;
+    &__asientos {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr); 
+        gap: 10px;
+        justify-content: center;
+        margin: 20px auto;
+        width: fit-content;
+    }
 }
 
 .asiento {
@@ -88,23 +88,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    color: $red-color;
 
-/* Estados del asiento */
-.asiento-libre {
-    background-image: url('../../assets/icons/butaca.svg');
-    filter: brightness(1); /* Blanco */
-}
+    &-libre {
+        background-image: url('../../assets/icons/butaca.svg');
+        filter: brightness(1); /* Blanco */
+    }
 
-.asiento-seleccionado {
-    background-image: url('../../assets/icons/butaca.svg');
-    filter: brightness(0.5); /* Gris */
-}
+    &-seleccionado {
+        background-image: url('../../assets/icons/butaca.svg');
+        filter: brightness(0.5); /* Gris */
+    }
 
-.asiento-ocupado {
-    background-image: url('../../assets/icons/butaca.svg');
-    filter: hue-rotate(180deg) brightness(0.6); /* Rojo */
-    cursor: not-allowed;
+    &-ocupado {
+        background-image: url('../../assets/icons/butaca.svg');
+        filter: hue-rotate(180deg) brightness(0.6); /* Rojo */
+        cursor: not-allowed;
+    }
 }
 
 
