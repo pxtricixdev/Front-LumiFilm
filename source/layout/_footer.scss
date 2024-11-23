@@ -5,7 +5,7 @@
 .hrFooter {
     border-color: $red-color;
     opacity: 50%;
-    width: 75%;
+    width: 90%;
 }
 
 .footer {
@@ -16,7 +16,10 @@
     &__item {
         margin: 0 auto;
         @include regular-text(14px);
-        padding: 4px 0px;
+
+        a:hover {
+            color: $red-color;
+        }
 
         &--logo {
             width: 166px;
@@ -26,6 +29,7 @@
 
                 img {
                     max-width: 80%;
+                    margin: 0 auto;
                 }
             }
         }
@@ -63,6 +67,12 @@
             max-width: 300px;
             margin-bottom: 40px;
         }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .hrFooter {
+        max-width: 1200px;
     }
 }
 
