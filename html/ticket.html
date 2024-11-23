@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumi Film</title>
     <link rel="stylesheet" href="../dist/style/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 </head>
 
 <body>
@@ -44,40 +45,40 @@
         </header>
     
         <section class="compra__section">
-            <form action="" class="compra__formulario">
+            <form action="" class="compra__formulario" id="datosFormulario">
                 <h3 class="compra__formulario-titulo">Datos personales</h3>
                 <div class="compra__formulario-div">
                     <label for="">Nombre</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombre" required>
                 </div>
                 <div class="compra__formulario-div">
                     <label for="">Apellido</label>
-                    <input type="text" name="apellido" id="apellido">
+                    <input type="text" name="apellido" id="apellido" required>
                 </div>
                 <div class="compra__formulario-div">
                     <label for="">Teléfono</label>
-                    <input type="tel" name="tel" id="tel">
+                    <input type="tel" name="tel" id="tel" required>
                 </div>
                 <div class="compra__formulario-div">
                     <label for="">Mail</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" required>
+                </div>
+           
+                <div class="compra__resumen">
+                    <div class="compra__resumen-div">
+                        <span class="compra__total">TOTAL</span>
+                        <span class="compra__precio">€</span>
+                    </div>
+                    <span class="compra__gestion">Gastos de gestión e IVA incluídos</span>
+                    <div class="compra__terminos">
+                        <input type="checkbox" id="terms" name="terms">
+                        <label for="terms">Acepto las Políticas de Privacidad y las Condiciones de Contratación</label>
+                    </div>
+                </div>
+                <div class="compra__boton-div">
+                    <button type="submit" class="compra__boton button" id="btn">Pagar</button>
                 </div>
             </form>
-            <div class="compra__resumen">
-                <div class="compra__resumen-div">
-                    <span class="compra__total">TOTAL</span>
-                    <span class="compra__precio">€</span>
-                </div>
-                <span class="compra__gestion">Gastos de gestión e IVA incluídos</span>
-                <div class="compra__terminos">
-                    <input type="checkbox" id="terms" name="terms">
-                    <label for="terms">Acepto las Políticas de Privacidad y las Condiciones de Contratación</label>
-                </div>
-            </div>
-            <div class="compra__boton-div">
-                <button class="compra__boton button">Pagar</button>
-            </div>
-            
         </section>
     </main>
     
@@ -146,5 +147,7 @@
         </nav>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="../scripts/ticket.js"></script>
 </body>
 </html>

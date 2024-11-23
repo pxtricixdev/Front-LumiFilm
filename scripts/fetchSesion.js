@@ -80,6 +80,7 @@ const printSesiones = (sesiones) => {
 
 // Pintar los asientos 
 const printAsientos = (asientos) => {
+    const contenedorBoton = document.querySelector('.sesiones__boton')
     const contenedorAsientos = document.querySelector('.sesiones__asientos');
     contenedorAsientos.innerHTML = '';
 
@@ -96,6 +97,15 @@ const printAsientos = (asientos) => {
 
         contenedorAsientos.appendChild(asientoDiv);
     });
+
+    const btnSiguiente = document.createElement('button')
+    btnSiguiente.classList.add('sesiones__boton-siguiente')
+    btnSiguiente.classList.add('button')
+    btnSiguiente.textContent='Siguiente'
+    btnSiguiente.addEventListener('click', () => {
+        window.location.href = 'ticket.html';
+    });
+    contenedorBoton.appendChild(btnSiguiente)
 };
 
 // Seleccionar un asiento (cambiar a gris temporalmente)

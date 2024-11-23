@@ -82,7 +82,7 @@ const buyButton = document.getElementById('movie-detail__buy')
 const redireccionAsientos = () => {
     const movieId = new URLSearchParams(window.location.search).get('id');
     if (movieId) {
-        window.location.href = `movieSeats.html?id=${movieId}`;
+        window.location.href = `sesiones.html?id=${movieId}`;
     } else {
         console.error('No se encontró el ID de la película en la URL.');
     }
@@ -93,6 +93,7 @@ const fetchPeliculaById = async (id) => {
         const response = await fetch(`${api_pelis}${id}`);
         const movie = await response.json();
         console.log(movie)
+        localStorage.setItem('peliculaSeleccionada', JSON.stringify(movie));
         printMovieDetail(movie);
     } catch (error) {
         console.log("Error fetching data for movie ID: ", error);
