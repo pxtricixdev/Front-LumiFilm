@@ -1,0 +1,895 @@
+@import url("https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.button {
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #251977;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transition: ease-in 0.1s;
+}
+
+.header {
+  width: 100%;
+  color: #fff;
+  padding: 5px;
+  position: fixed;
+  background-color: rgba(56, 53, 75, 0.8274509804);
+  z-index: 10000;
+}
+.header__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 35px;
+  align-items: center;
+}
+.header__item a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+}
+.header__item a:hover {
+  color: #EB0033;
+  transition: ease-in-out 0.2s;
+}
+.header__item img {
+  width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: none;
+  }
+}
+.hrFooter {
+  border-color: #EB0033;
+  opacity: 50%;
+  width: 90%;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+}
+.footer__item {
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 14px;
+}
+.footer__item a:hover {
+  color: #EB0033;
+}
+.footer__item--logo {
+  width: 166px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+}
+.footer__item--logo img {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.footer__social-list {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  margin-bottom: 130px;
+  padding-top: 20px;
+}
+.footer__social-item img {
+  width: 30px;
+  height: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer__list {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .footer__social-list {
+    max-width: 300px;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .hrFooter {
+    max-width: 1200px;
+  }
+}
+.navbar {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #EB0033;
+  width: 320px;
+  height: 66px;
+  border-radius: 99px;
+  -webkit-box-shadow: 0px 3px 21px -1px rgba(37, 15, 15, 0.35);
+  -moz-box-shadow: 0px 3px 21px -1px rgba(37, 15, 15, 0.35);
+  box-shadow: 0px 3px 21px -1px rgba(37, 15, 15, 0.35);
+  z-index: 9999;
+}
+.navbar__list {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 21px auto;
+}
+.navbar__svg {
+  width: 25px;
+  height: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.homeBanner {
+  width: 100%;
+  height: 350px;
+  background-image: url(../../assets/images/pexels-tima-miroshnichenko-7991579.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.homeBanner__logo {
+  position: absolute;
+  top: 60px;
+  left: 135px;
+  width: 115px;
+  height: 40px;
+}
+
+.homeMain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+.homeMain__titulo {
+  font-weight: 500;
+  font-size: 24px;
+  color: #EB0033;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.homeMain__parrafo {
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.homeMain__parrafo--semibold {
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.carousel__titulo {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #EB0033;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.swiper {
+  width: 100%;
+  border-radius: 15px;
+}
+.swiper-slide {
+  position: relative;
+  max-height: 650px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: baseline !important;
+}
+.swiper-slide img {
+  width: 100%;
+}
+.swiper-slide__titulo {
+  color: #fff;
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #fff !important;
+  opacity: 30% !important;
+}
+.swiper-pagination-bullet-active {
+  background: #EB0033 !important;
+  opacity: 100% !important;
+}
+.swiper-button-prev {
+  display: none !important;
+}
+.swiper-button-next {
+  display: none !important;
+}
+
+.masVisto {
+  color: #fff;
+  margin: 40px 10px;
+}
+.masVisto__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  grid-gap: 15px;
+}
+.masVisto__titulo {
+  color: #EB0033;
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+.masVisto__parrafo {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+}
+.masVisto__pelicula {
+  width: 175px;
+  height: 278px;
+  border-radius: 16px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.masVisto__pelicula--1 {
+  background-image: url(../../assets/images/pelis/dune-2-ceo-bng.webp);
+  transition: transform 0.3s ease-in-out;
+}
+.masVisto__pelicula--1:hover {
+  transform: scale(1.02);
+}
+.masVisto__pelicula--2 {
+  background-image: url(../../assets/images/pelis/alien_romulus_ver2.webp);
+  transition: transform 0.3s ease-in-out;
+}
+.masVisto__pelicula--2:hover {
+  transform: scale(1.02);
+}
+.masVisto__pelicula--3 {
+  background-image: url(../../assets/images/pelis/robot.webp);
+  transition: transform 0.3s ease-in-out;
+}
+.masVisto__pelicula--3:hover {
+  transform: scale(1.02);
+}
+.masVisto__pelicula--4 {
+  background-image: url(../../assets/images/pelis/speak.webp);
+  transition: transform 0.3s ease-in-out;
+}
+.masVisto__pelicula--4:hover {
+  transform: scale(1.02);
+}
+.masVisto__pelicula-datos {
+  text-align: center;
+  width: 175px;
+  height: 55px;
+  background-color: #38354B;
+  border-radius: 0 0 16px 16px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.masVisto__pelicula-datos-titulo {
+  font-weight: 600;
+  font-size: 16px;
+}
+.masVisto__pelicula-datos-genero {
+  font-weight: 300;
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.proximamente {
+  margin: 40px 10px;
+}
+.proximamente__titulo {
+  font-weight: 700;
+  font-size: 20px;
+  color: #EB0033;
+  padding-bottom: 5px;
+}
+.proximamente__parrafo {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.proximamente__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  grid-gap: 15px;
+}
+.proximamente__elemento {
+  width: 175px;
+  height: 278px;
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+.proximamente__elemento:hover {
+  transform: scale(1.02);
+}
+.proximamente__elemento--blancanieves {
+  background-image: url(../../assets/images/proximamente/blancanieves.webp);
+}
+.proximamente__elemento--gladiator {
+  background-image: url(../../assets/images/proximamente/gladiator.webp);
+}
+.proximamente__elemento--wicked {
+  background-image: url(../../assets/images/proximamente/wicked.webp);
+}
+.proximamente__elemento--winnie {
+  background-image: url(../../assets/images/proximamente/winnie.webp);
+}
+
+@media only screen and (min-width: 768px) {
+  .homeMain__titulo {
+    font-size: 26px;
+  }
+  .homeMain__parrafo {
+    font-size: 18px;
+  }
+  .homeMain__parrafo--semibold {
+    font-size: 18px;
+  }
+  .masVisto__titulo,
+  .proximamente__titulo {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .masVisto__parrafo,
+  .proximamente__parrafo {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .carousel__titulo {
+    font-size: 24px;
+  }
+  .swiper-slide__titulo {
+    font-size: 24px;
+  }
+  .swiper-button-prev {
+    display: block !important;
+    color: #ddd !important;
+  }
+  .swiper-button-next {
+    display: block !important;
+    color: #ddd !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .masVisto,
+  .proximamente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .masVisto__grid,
+  .proximamente__grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+  .masVisto__titulo, .masVisto__parrafo,
+  .proximamente__titulo,
+  .proximamente__parrafo {
+    margin-left: 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .masVisto__pelicula {
+    width: 230px;
+    height: 355px;
+  }
+  .masVisto__pelicula-datos {
+    width: 230px;
+    height: 65px;
+  }
+  .proximamente__elemento {
+    width: 230px;
+    height: 355px;
+  }
+}
+.headerMovies {
+  text-align: center;
+  padding: 75px 0;
+}
+.headerMovies .contenedorTitulo__titulo {
+  font-weight: 700;
+  font-size: 28px;
+  color: #EB0033;
+}
+
+.movies {
+  margin-bottom: 150px;
+}
+.movies .moviesList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+}
+.movies .moviesList .movie-card {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.movies .moviesList .movie-card .movies__imagen {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+.movies .moviesList .movie-card .movies__content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+.movies .moviesList .movie-card .movies__content .movies__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 15px;
+  text-align: left;
+  color: #fff;
+}
+.movies .moviesList .movie-card .movies__content .movies__duration,
+.movies .moviesList .movie-card .movies__content .movies__category,
+.movies .moviesList .movie-card .movies__content .movies__pegi {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.movies .moviesList .movie-card .movies__content .movies__duration img,
+.movies .moviesList .movie-card .movies__content .movies__category img,
+.movies .moviesList .movie-card .movies__content .movies__pegi img {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+.movies .moviesList .movie-card .movies__content .movies__duration .movies__value,
+.movies .moviesList .movie-card .movies__content .movies__category .movies__value,
+.movies .moviesList .movie-card .movies__content .movies__pegi .movies__value {
+  font-size: 14px;
+  color: #fff;
+}
+.movies .moviesList .movie-card .movies__content .movies__pegi {
+  margin-top: 15px;
+}
+.movies .moviesList .movie-card .movies__content .movies__pegi img {
+  width: 22px;
+  height: 22px;
+}
+
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.movie-detail__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 10px;
+}
+.movie-detail__image {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+}
+.movie-detail__content {
+  padding: 20px;
+  width: 100%;
+}
+.movie-detail__title {
+  font-weight: 700;
+  font-size: 28px;
+  color: #EB0033;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.movie-detail__info {
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.movie-detail__info span:not(:last-child) {
+  margin-right: 10px;
+}
+.movie-detail__section-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.movie-detail__sinopsis, .movie-detail__director {
+  line-height: 1.5;
+  margin-bottom: 40px;
+  color: #fff;
+  text-align: justify;
+  font-weight: 400;
+  font-size: 15px;
+}
+.movie-detail__actions {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.movie-detail__button {
+  width: 170px;
+  height: 50px;
+  margin-bottom: 80px;
+}
+
+.compra {
+  color: #fff;
+  max-width: 306px;
+  margin: 0 auto;
+}
+.compra__titulo {
+  text-transform: uppercase;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 80px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.compra__subtitulo {
+  font-size: 16px;
+  color: #EB0033;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.compra__parrafo {
+  font-size: 13px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.compra__formulario-titulo {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 30px 0;
+}
+.compra__formulario-div {
+  display: flex;
+  flex-direction: column;
+}
+.compra__formulario-div label {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+.compra__formulario-div input {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #EB0033;
+  color: #fff;
+}
+.compra__formulario-div input:focus {
+  outline: none;
+}
+.compra__resumen, .compra__total {
+  display: block;
+}
+.compra__resumen {
+  margin-top: 30px;
+}
+.compra__resumen-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+}
+.compra__gestion {
+  font-size: 11px;
+  color: #ddd;
+}
+.compra__terminos {
+  max-width: 280px;
+}
+.compra__terminos label {
+  font-size: 11px;
+  font-weight: 400;
+}
+.compra__boton {
+  width: 130px;
+  height: 50px;
+}
+.compra__boton-div {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 60px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .compra {
+    max-width: 500px;
+  }
+  .compra__terminos {
+    max-width: 500px;
+  }
+  .compra__terminos label {
+    font-weight: 400;
+    font-size: 11px;
+  }
+}
+.sesiones {
+  color: #fff;
+}
+.sesiones__icono {
+  position: absolute;
+  left: 30px;
+  padding-top: 50px;
+  background: none;
+  border: none;
+}
+.sesiones__icono svg {
+  fill: #EB0033;
+  cursor: pointer;
+}
+.sesiones__titulo {
+  font-weight: 600;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: #EB0033;
+  padding-top: 50px;
+  text-align: center;
+}
+.sesiones__dia-list {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 60px 10px 15px 10px;
+}
+.sesiones__dia-text {
+  font-weight: 600;
+  font-size: 20px;
+}
+.sesiones__dia-item {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+}
+.sesiones__horarios-dia {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-top: 5px;
+}
+.sesiones__horario-item {
+  border: 0;
+  color: #ddd;
+  padding: 8px 10px;
+  border-radius: 5%;
+  background: #EB0033;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 18px;
+}
+.sesiones__pantalla {
+  margin: 0 auto;
+}
+.sesiones__asientos {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+  width: fit-content;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+.sesiones__boton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.sesiones__boton-siguiente {
+  width: 150px;
+  height: 50px;
+}
+
+.asiento {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #EB0033;
+}
+.asiento-libre {
+  background-image: url("../../assets/icons/butaca.svg");
+  filter: brightness(1); /* Blanco */
+}
+.asiento-seleccionado {
+  background-image: url("../../assets/icons/butaca.svg");
+  filter: brightness(0.5); /* Gris */
+}
+.asiento-ocupado {
+  background-image: url("../../assets/icons/butaca.svg");
+  filter: hue-rotate(180deg) brightness(0.6); /* Rojo */
+  cursor: not-allowed;
+}
+
+@media only screen and (min-width: 768px) {
+  .asiento {
+    width: 35px;
+    height: 35px;
+  }
+  .sesiones__icono, .sesiones__titulo {
+    padding-top: 80px;
+  }
+}
