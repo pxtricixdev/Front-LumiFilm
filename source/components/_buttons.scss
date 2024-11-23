@@ -11,3 +11,8 @@
     cursor: pointer;
 }
 
+.button:hover {
+    opacity: 0.9;
+    transition: ease-in 0.1s;
+}
+

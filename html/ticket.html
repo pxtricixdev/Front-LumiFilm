@@ -8,7 +8,34 @@
 </head>
 
 <body>
+    <div style="position:fixed; z-index: -4; top:0px; left:0px; height:100%; width:100%;"><div style="position: absolute; top: 0; z-index: -1; height: 100%; width: 100%; background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;"></div></div>
+    
+    <header class="header">
+        <ul class="header__list">
+            <li class="header__item"><img src="../assets/images/logo.webp" alt=""></li>
+            <li class="header__item"><a href="./index.html">Home</a></li>
+            <li class="header__item"><a href="./movies.html">Cartelera</a></li>
+            <li class="header__item">
+                <a href="./index.html">
+                    Buscar
+                </a>
+            </li>
+        </ul>
+    </header>
+
     <main class="compra">
+        <button class="sesiones__icono" id="go-back" onclick="volverAtras()">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_49_2)">
+                <path d="M8.23825 9.34332L1.70658 15.875C0.64596 16.9864 0.0541992 18.4637 0.0541992 20C0.0541992 21.5363 0.64596 23.0136 1.70658 24.125L8.23825 30.6567C8.46887 30.8954 8.74473 31.0859 9.04974 31.2169C9.35475 31.3479 9.6828 31.4169 10.0147 31.4198C10.3467 31.4227 10.6759 31.3594 10.9831 31.2337C11.2904 31.108 11.5695 30.9224 11.8042 30.6876C12.039 30.4529 12.2246 30.1738 12.3503 29.8665C12.476 29.5593 12.5393 29.2301 12.5364 28.8982C12.5335 28.5662 12.4645 28.2382 12.3335 27.9331C12.2025 27.6281 12.012 27.3523 11.7733 27.1217L7.14158 22.4867L37.5583 22.4483C38.2213 22.4483 38.8572 22.1849 39.326 21.7161C39.7949 21.2472 40.0583 20.6114 40.0583 19.9483C40.0583 19.2853 39.7949 18.6494 39.326 18.1806C38.8572 17.7117 38.2213 17.4483 37.5583 17.4483L7.16658 17.4867L11.7733 12.8783C12.2286 12.4068 12.4806 11.7753 12.4749 11.1198C12.4692 10.4643 12.2063 9.83729 11.7428 9.37377C11.2793 8.91025 10.6522 8.64733 9.99675 8.64164C9.34126 8.63594 8.70976 8.88792 8.23825 9.34332Z" fill="EB0033"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_49_2">
+                <rect width="40" height="40" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>                
+        </button>
         <header class="compra__header">
             <h1 class="compra__titulo">Resumen de compra</h1>
             <h2 class="compra__subtitulo">¡Ya casi tienes tus entradas!</h2>
@@ -48,7 +75,7 @@
                 </div>
             </div>
             <div class="compra__boton-div">
-                <button class="compra__boton">Pagar</button>
+                <button class="compra__boton button">Pagar</button>
             </div>
             
         </section>
@@ -78,5 +105,46 @@
             </li>
         </ul>
     </nav>
+
+    <hr class="hrFooter">
+
+    <footer class="footer">
+        <nav class="footer__nav">
+            <ul class="footer__list">
+                <li class="footer__item footer__item--logo">
+                    <a href="index.html">
+                        <img src="../assets/images/logo.webp" alt="Logo de LumiFilm" class="footer__logo">
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="../html/movies.html" class="footer__link">Cartelera</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">Términos y condiciones</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">Política de privacidad</a>
+                </li>
+            </ul>
+            <ul class="footer__social-list">
+                <li class="footer__social-item">
+                    <a href="index.html">
+                        <img src="../assets/icons/twitter.svg" alt="Twitter" class="footer__social-icon">
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="index.html">
+                        <img src="../assets/icons/facebook.svg" alt="Facebook" class="footer__social-icon">
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="index.html">
+                        <img src="../assets/icons/instagram.svg" alt="Instagram" class="footer__social-icon">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
 </body>
 </html>
