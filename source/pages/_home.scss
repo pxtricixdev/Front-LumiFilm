@@ -62,20 +62,25 @@
 }
 
 .swiper {
-    min-width: 300px;
-    min-height: 200px;
     width: 100%;
-    margin: 0 10px;
     border-radius: 15px;
 
     &-slide {
         position: relative;
+        max-height: 650px;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: baseline !important;
+
+        img {
+            width: 100%;
+        }
 
         &__titulo {
             color: $white-color;
             position: absolute;
             bottom: 15px;
-            left: 16px;
+            left: 30px;
             @include semibold-text(16px);
         }
     }
@@ -280,7 +285,8 @@
 }
 
 @media only screen and (min-width: 992px) {
-    .masVisto, .proximamente {
+    .masVisto, 
+    .proximamente {
         display: flex;
         flex-direction: column;
         justify-content: center;
