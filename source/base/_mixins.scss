@@ -23,3 +23,10 @@
     font-weight: 700;
     font-size: $size;
 }
+
+@mixin image-hover-zoom($scale: 1, $transition: 0.3s) {
+      transition: transform $transition ease-in-out;
+      &:hover {
+        transform: scale($scale);
+      }
+}

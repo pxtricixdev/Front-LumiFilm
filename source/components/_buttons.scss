@@ -1,0 +1,13 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.button {
+    @include semibold-text(16px);
+    background-color: $blue-color;
+    color: $white-color;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+

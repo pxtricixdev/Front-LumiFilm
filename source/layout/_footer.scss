@@ -9,6 +9,7 @@
 }
 
 .footer {
+    
     width: 100%;
     text-align: center;
 
@@ -20,9 +21,14 @@
         &--logo {
             width: 166px;
             height: 53px;
-            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+
+                img {
+                    max-width: 80%;
+                }
+            }
         }
-    }
 
     &__social-list {
         display: flex;
@@ -42,5 +48,23 @@
         }
     }
 }
+
+@media only screen and (min-width: 768px) {
+    .footer {
+        &__list {
+            display: flex;
+            flex-direction: row;
+            max-width: 600px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        &__social-list {
+            max-width: 300px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
 
 

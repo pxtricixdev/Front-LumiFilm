@@ -21,7 +21,7 @@
 
 //Main section
 .homeMain {
-    width: 70%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 25px 0;
 
@@ -66,6 +66,7 @@
     min-height: 200px;
     width: 100%;
     margin: 0 10px;
+    border-radius: 15px;
 
     &-slide {
         position: relative;
@@ -89,12 +90,20 @@
             opacity: 100% !important;
         }
     }
+
+    &-button-prev {
+        display: none !important;
+    }
+
+    &-button-next {
+        display: none !important;
+    }
 }
 
 //Mas visto section
 .masVisto {
     color: $white-color;
-    margin: 45px 30px 35px 30px;
+    margin: 40px 10px;
 
     &__grid {
         display: grid;
@@ -108,45 +117,53 @@
         color: $red-color;
         @include bold-text(20px);
         padding-bottom: 5px;
+        padding-left: 5px
     }
 
     &__parrafo {
         @include semibold-text(15px);
         margin-bottom: 20px;
+        padding-left: 5px
     }
 
     &__pelicula {
-        width: 149px;
-        height: 226px;
+        width: 175px;
+        height: 278px;
         border-radius: 16px;
         position: relative;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
 
         &--1 {
             background-image: url(../../assets/images/pelis/dune-2-ceo-bng.webp);
+            @include image-hover-zoom(1.02, 0.3s);
         }
 
         &--2 {
             background-image: url(../../assets/images/pelis/alien_romulus_ver2.webp);
+            @include image-hover-zoom(1.02, 0.3s);
         }
 
         &--3 {
             background-image: url(../../assets/images/pelis/robot.webp);
+            @include image-hover-zoom(1.02, 0.3s);
         }
 
         &--4 {
             background-image: url(../../assets/images/pelis/speak.webp);
+            @include image-hover-zoom(1.02, 0.3s);
         }
 
         &-datos {
             text-align: center;
-            width: 149px;
+            width: 175px;
             height: 55px;
-            background-color: $grey-color;
+            background-color: #38354B;
             border-radius: 0 0 16px 16px;
-            position: absolute;
             bottom: 0;
             display: flex;
             flex-direction: column;
@@ -166,7 +183,7 @@
 
 //Proximos estrenos section
 .proximamente {
-    margin: 50px 30px 60px 30px;
+    margin: 40px 10px;
 
     &__titulo {
         @include bold-text(20px);
@@ -188,12 +205,13 @@
     }
 
     &__elemento {
-        width: 149px;
-        height: 226px;
+        width: 175px;
+        height: 278px;
         border-radius: 16px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        @include image-hover-zoom(1.02, 0.3s);
 
         &--blancanieves {
             background-image: url(../../assets/images/proximamente/blancanieves.webp);
@@ -227,27 +245,46 @@
             font-size: 18px;
         }
     }
-    .masVisto {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 715px;
-        margin: 0 auto;
-        padding-top: 30px;
-    
-        &__grid {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 40px;
+    .masVisto, 
+    .proximamente {
+
+        &__titulo {
+            @include bold-text(24px);
+        }
+        &__parrafo {
+            @include semibold-text(18px);
         }
     }
 
-    .proximamente {
+    .carousel {
+        &__titulo {
+            font-size: 24px;
+        }
+    }
+
+    .swiper {
+        &-slide__titulo {
+        font-size: 24px;
+        }
+
+        &-button-prev {
+            display: block !important;
+            color: $light-grey-color !important;
+        }
+    
+        &-button-next {
+            display: block !important;
+            color: $light-grey-color !important;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .masVisto, .proximamente {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        max-width: 715px;
+        max-width: 1200px;
         margin: 0 auto;
         padding-top: 40px;
         padding-bottom: 40px;
@@ -258,24 +295,33 @@
             justify-content: center;
             gap: 40px;
         }
-    }
 
-    .carousel {
-        &__titulo {
-            font-size: 24px;
+        &__titulo,
+        &__parrafo {
+            margin-left: 10px;
         }
     }
-
-    .swiper-slide__titulo {
-        font-size: 24px;
-    }
 }
 
-@media only screen and (min-width: 992px) {
-    
-
-}
 
 @media only screen and (min-width: 1200px) {
 
+    .masVisto {
+        &__pelicula {
+            width: 230px;
+            height: 355px;
+
+            &-datos {
+                width: 230px;
+                height: 65px;
+            }
+        }
+    }
+
+    .proximamente {
+        &__elemento {
+            width: 230px;
+            height: 355px;
+        }
+    }
 }

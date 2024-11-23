@@ -65,7 +65,7 @@ const printMovieDetail = (movie) => {
 
     const buyButton = document.createElement('button');
     buyButton.textContent = 'Comprar';
-    buyButton.classList.add('movie-detail__button');
+    buyButton.classList.add('movie-detail__button button');
     buyButton.setAttribute('id', 'movie-detail__buy');
     buyButton.addEventListener('click', redireccionAsientos);
 
