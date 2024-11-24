@@ -833,6 +833,10 @@ body {
   font-weight: 400;
   font-size: 18px;
 }
+.sesiones__horario-item:hover {
+  background-color: rgba(235, 0, 51, 0.7);
+  transition: ease-in-out 0.1s;
+}
 .sesiones__pantalla {
   margin: 0 auto;
 }
@@ -852,7 +856,7 @@ body {
   justify-content: center;
   padding-bottom: 30px;
 }
-.sesiones__boton-siguiente {
+.sesiones__boton button {
   width: 150px;
   height: 50px;
 }
@@ -876,11 +880,11 @@ body {
 }
 .asiento-seleccionado {
   background-image: url("../../assets/icons/butaca.svg");
-  filter: brightness(0.5); /* Gris */
+  filter: brightness(0.7); /* Gris claro */
 }
 .asiento-ocupado {
   background-image: url("../../assets/icons/butaca.svg");
-  filter: hue-rotate(180deg) brightness(0.6); /* Rojo */
+  filter: hue-rotate(180deg) brightness(0.2); /* Gris oscuro */
   cursor: not-allowed;
 }
 
@@ -888,6 +892,10 @@ body {
   .asiento {
     width: 35px;
     height: 35px;
+  }
+  .sesiones {
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .sesiones__icono, .sesiones__titulo {
     padding-top: 80px;

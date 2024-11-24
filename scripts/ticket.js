@@ -5,6 +5,9 @@ const volverAtras = () => {
 
 var notyf = new Notyf();
 const peliculaSeleccionada = JSON.parse(localStorage.getItem('peliculaSeleccionada'));
+const sesionSeleccionada = sessionStorage.getItem('sesionSeleccionada');
+const asientosSeleccionados = JSON.parse(sessionStorage.getItem('asientosSeleccionados'));
+const salaSeleccionada = JSON.parse(sessionStorage.getItem('salaSeleccionada'));
 
 const formulario = document.getElementById('datosFormulario')
 formulario.addEventListener('submit', async (event) => {
@@ -15,6 +18,7 @@ formulario.addEventListener('submit', async (event) => {
 
     const datosCompletos = {
         pelicula: {
+            id: peliculaSeleccionada.id,
             titulo: peliculaSeleccionada.titulo,
             sinopsis: peliculaSeleccionada.sinopsis,
             duracion: peliculaSeleccionada.duracion,
@@ -24,22 +28,20 @@ formulario.addEventListener('submit', async (event) => {
             imagen: peliculaSeleccionada.imagen,
         },
         sala: {
-            id: 1 
+            id: salaSeleccionada, 
         },
-        asientosReservados: [
-            {
-                columna: 3,
-                fila: "B",
-                ocupado: true,
-                precio: 10
-            }
-        ],
+        asientosReservados: asientosSeleccionados.map(asiento => ({
+            columna: asiento.columna,
+            fila: asiento.fila,
+            ocupado: true,
+            precio: asiento.precio,
+        })),
         fechaTicket: new Date().toISOString(),
         nombre: datos.nombre,
         apellido: datos.apellido,
         telefono: datos.tel,
         mail: datos.email,
-        total: 10,
+        precioTotal: asientosSeleccionados.reduce((sum, asiento) => sum + parseFloat(asiento.precio), 0),
     };
 
     try {

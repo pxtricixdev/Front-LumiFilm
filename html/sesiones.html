@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumi Film | Escoge asiento</title>
     <link rel="stylesheet" href="../dist/style/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 </head>
 <body>
     <div style="position:fixed; z-index: -4; top:0px; left:0px; height:100%; width:100%;"><div style="position: absolute; top: 0; z-index: -1; height: 100%; width: 100%; background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;"></div></div>
@@ -41,7 +42,9 @@
         </div>
         <img class="sesiones__pantalla" src="../assets/icons/pantalla.svg" alt="Logo de la imagen de la pantalla">
         <div class="sesiones__asientos"></div>
-        <div class="sesiones__boton"></div>
+        <div class="sesiones__boton">
+            <button class="button" id="btn-next">Siguiente</button>
+        </div>
     </main>
 
     <nav class="navbar">
@@ -109,6 +112,7 @@
         </nav>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script src="../scripts/fetchSesion.js"></script>
 </body>
 </html>

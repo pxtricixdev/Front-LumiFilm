@@ -1,8 +1,12 @@
 const api_sesion = 'https://localhost:7024/api/Sesion/pelicula/';
+var notyf = new Notyf();
 
 //Volver a la página anterior
 const goBack = document.getElementById('go-back');
 const volverAtras = () => {
+    sessionStorage.removeItem('asientosSeleccionados');
+    sessionStorage.removeItem('sesionSeleccionada')
+    sessionStorage.removeItem('salaSeleccionada')
     window.history.back();
 };
 
@@ -54,18 +58,16 @@ const printSesiones = (sesiones) => {
         const itemDia = document.createElement('div');
         itemDia.classList.add('sesiones__dia-item');
 
-        // Título del día
         const diaText = document.createElement('p');
         diaText.classList.add('sesiones__dia-text');
         diaText.textContent = dia;
         itemDia.appendChild(diaText);
 
-        // Botones de horarios
         const listaHorariosPorDia = sesionesPorDia[dia].map(hora => {
             const itemHora = document.createElement('button');
             itemHora.classList.add('sesiones__horario-item');
             itemHora.textContent = formatHorario(hora.hora);
-            itemHora.onclick = () => HorarioClick(hora.sesionId); //click en sesion da asientos 
+            itemHora.onclick = () => horarioClick(hora.sesionId); 
             return itemHora;
         });
 
@@ -80,7 +82,6 @@ const printSesiones = (sesiones) => {
 
 // Pintar los asientos 
 const printAsientos = (asientos) => {
-    const contenedorBoton = document.querySelector('.sesiones__boton')
     const contenedorAsientos = document.querySelector('.sesiones__asientos');
     contenedorAsientos.innerHTML = '';
 
@@ -98,82 +99,69 @@ const printAsientos = (asientos) => {
         contenedorAsientos.appendChild(asientoDiv);
     });
 
-    const btnSiguiente = document.createElement('button')
-    btnSiguiente.classList.add('sesiones__boton-siguiente')
-    btnSiguiente.classList.add('button')
-    btnSiguiente.textContent='Siguiente'
+    const btnSiguiente = document.getElementById('btn-next');
     btnSiguiente.addEventListener('click', () => {
-        window.location.href = 'ticket.html';
+        const selectedSession = sessionStorage.getItem('sesionSeleccionada');
+        const selectedSeats = sessionStorage.getItem('asientosSeleccionados');
+
+        if (!selectedSession || !selectedSeats || JSON.parse(selectedSeats).length === 0) {
+            notyf.error('Debes seleccionar una sesión y al menos un asiento.');
+            return;
+        }
+
+    window.location.href = 'ticket.html';
     });
-    contenedorBoton.appendChild(btnSiguiente)
 };
 
 // Seleccionar un asiento (cambiar a gris temporalmente)
 const seleccionarAsiento = (asientoDiv, asiento) => {
+    let seleccionAsientos = JSON.parse(sessionStorage.getItem('asientosSeleccionados')) || [];
+
     if (asientoDiv.classList.contains('asiento-seleccionado')) {
-        asientoDiv.classList.remove('asiento-seleccionado'); // Desmarcar asiento
+        asientoDiv.classList.remove('asiento-seleccionado');
+        seleccionAsientos = seleccionAsientos.filter(a => a.id !== asiento.id);
     } else {
-        asientoDiv.classList.add('asiento-seleccionado'); // Marcar asiento
+        asientoDiv.classList.add('asiento-seleccionado');
+        seleccionAsientos.push(asiento);
     }
+    sessionStorage.setItem('asientosSeleccionados', JSON.stringify(seleccionAsientos));
 };
 
 
-// Reservar un asiento (cambiar a rojo)
-const reservarAsiento = async (asiento) => {
-    const confirmacion = confirm(`¿Deseas reservar el asiento ${asiento.fila}${asiento.columna}?`);
-    if (!confirmacion) return;
+//Fetch de asientos por sesion
+const horarioClick = async (sesionId) => {
+    sessionStorage.removeItem('asientosSeleccionados');
 
-    try {
-        const response = await fetch(`https://localhost:7024/api/Asiento/sesion/${asiento.sesionId}/${asiento.fila}/${asiento.columna}/reservar`, {
-            method: 'PUT'
-        });
-
-        if (response.ok) {
-            alert('¡Asiento reservado con éxito!');
-            asiento.ocupado = true;
-
-            // Cambiar el asiento seleccionado a ocupado (rojo)
-            const asientoDiv = document.querySelector(`.asiento-seleccionado`);
-            if (asientoDiv) {
-                asientoDiv.classList.remove('asiento-seleccionado');
-                asientoDiv.classList.add('asiento-ocupado');
-            }
-
-            printAsientos([asiento]);
-        } else {
-            const error = await response.text();
-            alert(`Error: ${error}`);
-        }
-    } catch (error) {
-        console.error("Error al reservar el asiento:", error);
-        alert("No se pudo reservar el asiento.");
-    }
-};
-
-// Al pulsar click en una hora te de los asientos de esa sesion
-const HorarioClick = async (sesionId) => {
     try {
         const response = await fetch(`https://localhost:7024/api/Asiento/sesion/${sesionId}`);
-        const asientos = await response.json();
-        printAsientos(asientos);
+        const sesion = await response.json();
+
+        sessionStorage.setItem('sesionSeleccionada', sesionId);
+
+        printAsientos(sesion);
     } catch (error) {
         console.error("Error al cargar los asientos:", error);
     }
 };
 
-// Fetch de las sesiones asociadas a una película
+
+//Fetch de sesiones por pelicula
 const fetchSesionByMovie = async (movieId) => {
     try {
         const response = await fetch(`${api_sesion}${movieId}`);
         const sesiones = await response.json();
         console.log(sesiones);
         printSesiones(sesiones);
+        sesiones.forEach(sesion => {
+            console.log("Sala asociada a la sesión:", sesion.sala);
+            sessionStorage.setItem('salaSeleccionada', JSON.stringify(sesion.sala));
+        });
+
     } catch (error) {
         console.log("Error fetching data: ", error);
     }
 };
 
-// Obtenemos el id y llamamos al fetch
 const movieId = getMovieIdFromUrl();
 if (movieId) {
     fetchSesionByMovie(movieId);
