@@ -1,4 +1,4 @@
-const api_sesion = 'https://localhost:7024/api/Sesion/pelicula/';
+const api_sesion = 'https://34.202.78.59:8080/api/Sesion/pelicula/';
 
 //Volver a la página anterior
 const goBack = document.getElementById('go-back');
