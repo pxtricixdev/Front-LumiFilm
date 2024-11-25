@@ -43,7 +43,7 @@ formulario.addEventListener('submit', async (event) => {
     };
 
     try {
-        const response = await fetch('https://34.202.78.59:8080/api/Ticket', {
+        const response = await fetch('http://34.202.78.59:8080/api/Ticket', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

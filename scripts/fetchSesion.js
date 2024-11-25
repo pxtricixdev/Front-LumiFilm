@@ -1,4 +1,4 @@
-const api_sesion = 'https://34.202.78.59:8080/api/Sesion/pelicula/';
+const api_sesion = 'http://34.202.78.59:8080/api/Sesion/pelicula/';
 
 //Volver a la página anterior
 const goBack = document.getElementById('go-back');
@@ -124,7 +124,7 @@ const reservarAsiento = async (asiento) => {
     if (!confirmacion) return;
 
     try {
-        const response = await fetch(`https://localhost:7024/api/Asiento/sesion/${asiento.sesionId}/${asiento.fila}/${asiento.columna}/reservar`, {
+        const response = await fetch(`http://34.202.78.59:8080/api/Asiento/sesion/${asiento.sesionId}/${asiento.fila}/${asiento.columna}/reservar`, {
             method: 'PUT'
         });
 
@@ -153,7 +153,7 @@ const reservarAsiento = async (asiento) => {
 // Al pulsar click en una hora te de los asientos de esa sesion
 const HorarioClick = async (sesionId) => {
     try {
-        const response = await fetch(`https://localhost:7024/api/Asiento/sesion/${sesionId}`);
+        const response = await fetch(`http://34.202.78.59:8080/api/Asiento/sesion/${sesionId}`);
         const asientos = await response.json();
         printAsientos(asientos);
     } catch (error) {

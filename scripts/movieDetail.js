@@ -1,4 +1,4 @@
-const api_pelis = 'https://34.202.78.59:8080/api/Pelicula/';
+const api_pelis = 'http://34.202.78.59:8080/api/Pelicula/';
 
 // Obtener el ID de la película desde la URL 
 const getMovieIdFromUrl = () => {
