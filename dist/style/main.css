@@ -132,7 +132,7 @@ textarea:not([rows]) {
   width: 100px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .header {
     display: none;
   }
@@ -224,7 +224,7 @@ textarea:not([rows]) {
   height: 25px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .navbar {
     display: none;
   }
