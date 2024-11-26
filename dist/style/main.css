@@ -617,11 +617,6 @@ body {
 
 @media only screen and (min-width: 768px) {
   .movies .moviesList {
-    margin: 0 auto;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .movies .moviesList {
     list-style: none;
     padding: 0;
     display: grid;
@@ -632,8 +627,17 @@ body {
     margin: 0 auto;
     max-width: 800px;
   }
-  .movies .movie-card {
-    max-width: 400px;
+  .movies .moviesList .movie-card {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    height: 270px;
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+  }
+  .movies .moviesList .movie-card .movies__content .movies__title {
+    font-size: 16px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -767,6 +771,7 @@ body {
     margin: 0 auto;
     gap: 30px;
     margin-top: 125px;
+    margin-bottom: 125px;
   }
   .movie-detail__content {
     width: 60%;
