@@ -23,7 +23,7 @@
 .homeMain {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 25px 0;
+    padding: 20px;
 
     &__titulo {
         @include medium-text(24px);
@@ -52,6 +52,8 @@
 .carousel {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+
     &__titulo {
         @include semibold-text(20px);
         text-transform: uppercase;
@@ -115,7 +117,8 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         justify-items: center;
-        grid-gap: 15px;
+        grid-gap: 25px;
+        padding: 0px 10px;
     }
 
     &__titulo {
@@ -132,7 +135,7 @@
     }
 
     &__pelicula {
-        width: 175px;
+        width: 165px;
         height: 278px;
         border-radius: 16px;
         position: relative;
@@ -165,7 +168,7 @@
 
         &-datos {
             text-align: center;
-            width: 175px;
+            width: 165px;
             height: 55px;
             background-color: #38354B;
             border-radius: 0 0 16px 16px;
@@ -206,11 +209,12 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         justify-items: center;
-        grid-gap: 15px;
+        grid-gap: 25px;
+        padding: 0px 10px;
     }
 
     &__elemento {
-        width: 175px;
+        width: 165px;
         height: 278px;
         border-radius: 16px;
         background-repeat: no-repeat;
@@ -237,6 +241,23 @@
 }
 
 @media only screen and (min-width: 768px) {
+
+    .masVisto {
+        &__pelicula {
+            width: 175px;
+
+
+            &-datos {
+                width: 175px;
+            }
+        }
+    }
+
+    .proximamente {
+        &__elemento {
+            width: 175px;
+        }
+    }
     .homeMain {
         &__titulo {
             font-size: 26px;

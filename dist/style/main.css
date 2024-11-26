@@ -132,7 +132,7 @@ textarea:not([rows]) {
   width: 100px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .header {
     display: none;
   }
@@ -224,7 +224,7 @@ textarea:not([rows]) {
   height: 25px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .navbar {
     display: none;
   }
@@ -252,7 +252,7 @@ body {
 .homeMain {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 25px 0;
+  padding: 20px;
 }
 .homeMain__titulo {
   font-weight: 500;
@@ -280,6 +280,7 @@ body {
 .carousel {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 .carousel__titulo {
   font-weight: 600;
@@ -338,7 +339,8 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
-  grid-gap: 15px;
+  grid-gap: 25px;
+  padding: 0px 10px;
 }
 .masVisto__titulo {
   color: #EB0033;
@@ -354,7 +356,7 @@ body {
   padding-left: 5px;
 }
 .masVisto__pelicula {
-  width: 175px;
+  width: 165px;
   height: 278px;
   border-radius: 16px;
   position: relative;
@@ -395,7 +397,7 @@ body {
 }
 .masVisto__pelicula-datos {
   text-align: center;
-  width: 175px;
+  width: 165px;
   height: 55px;
   background-color: #38354B;
   border-radius: 0 0 16px 16px;
@@ -434,10 +436,11 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
-  grid-gap: 15px;
+  grid-gap: 25px;
+  padding: 0px 10px;
 }
 .proximamente__elemento {
-  width: 175px;
+  width: 165px;
   height: 278px;
   border-radius: 16px;
   background-repeat: no-repeat;
@@ -462,6 +465,15 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .masVisto__pelicula {
+    width: 175px;
+  }
+  .masVisto__pelicula-datos {
+    width: 175px;
+  }
+  .proximamente__elemento {
+    width: 175px;
+  }
   .homeMain__titulo {
     font-size: 26px;
   }
