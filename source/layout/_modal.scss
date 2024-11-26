@@ -1,0 +1,39 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.modal {
+    &__search {
+        width: 100%;
+        height: 90%;
+        background-color: #38354b;
+        color: $white-color;
+        margin: 0 auto;
+        position: fixed;
+        top: 0;
+        z-index: 2000;
+        display: none;
+    }
+
+    &__close {
+        background: none;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+    }
+
+    &__input {
+        margin: 0 auto;
+        padding-top: 25px;
+        input {
+            background: $white-color;
+            border: none;
+            border-radius: 15px;
+            padding: 10px 20px;
+            width: 400px;
+        }
+    }
+}
+
