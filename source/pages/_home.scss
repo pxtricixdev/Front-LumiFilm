@@ -23,7 +23,7 @@
 .homeMain {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 25px 0;
+    padding: 20px;
 
     &__titulo {
         @include medium-text(24px);
@@ -52,6 +52,8 @@
 .carousel {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+    
     &__titulo {
         @include semibold-text(20px);
         text-transform: uppercase;
@@ -115,7 +117,8 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         justify-items: center;
-        grid-gap: 15px;
+        grid-gap: 25px;
+        padding: 0px 10px;
     }
 
     &__titulo {
@@ -206,7 +209,8 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         justify-items: center;
-        grid-gap: 15px;
+        grid-gap: 25px;
+        padding: 0px 10px;
     }
 
     &__elemento {
