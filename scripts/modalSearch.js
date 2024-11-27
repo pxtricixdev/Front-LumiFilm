@@ -3,13 +3,18 @@ const btnSearch = document.getElementById('navbar-search')
 const openSearchLink = document.getElementById('search-link')
 const btnClose = document.getElementById('modal-close')
 
-//Abrir y cerrar el modal
+//Abrir y cerrar el modal con el navbar de movil
 btnSearch.addEventListener('click', () => {
-    modal.style.display = 'flex';
+    modal.style.display = 'block';
 })
 
 btnClose.addEventListener('click', () => {
     modal.style.display = 'none'
+})
+
+//Abrir el modal con el link de buscar del header
+openSearchLink.addEventListener('click', () => {
+    modal.style.display = 'block';
 })
 
 //Traemos todas las películas de la api
@@ -40,9 +45,10 @@ const renderMovies = (filteredMovies) => {
     }
 
     filteredMovies.forEach(movie => {
-        const movieElement = document.createElement('div');
-        movieElement.className = 'movie-item';
+        const movieElement = document.createElement('a');
+        movieElement.className = 'movie__results-title';
         movieElement.textContent = movie.titulo;
+        movieElement.href = `movieDetail.html?id=${movie.id}`;
         results.appendChild(movieElement);
     });
 };
