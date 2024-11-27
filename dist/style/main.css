@@ -259,7 +259,6 @@ body {
   top: 25px;
 }
 .modal__input {
-  margin: 0 auto;
   padding-top: 25px;
 }
 .modal__input input {
@@ -267,7 +266,8 @@ body {
   border: none;
   border-radius: 15px;
   padding: 10px 20px;
-  width: 400px;
+  max-width: 400px;
+  margin-left: 20px;
 }
 
 .homeBanner {
