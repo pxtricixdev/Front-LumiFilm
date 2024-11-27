@@ -1,0 +1,47 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+
+.policy {
+    color: $white-color;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px;
+
+    &__header {
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 10px;
+        color: $red-color;
+        font-size: 20px;
+    }
+
+    &__section {
+        margin-top: 20px;
+        line-height: 25px;
+    }
+
+    &__subtitle {
+        color: $red-color;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+    &__text {
+        margin-left: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    &__list {
+        margin-left: 75px;
+        list-style: disc;
+
+        &-item {
+            margin-bottom: 10px;
+        }
+    }
+}
+

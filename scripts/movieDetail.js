@@ -2,8 +2,8 @@ const api_pelis = 'https://localhost:7024/api/Pelicula/';
 
 // Obtener el ID de la película desde la URL 
 const getMovieIdFromUrl = () => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('id');
+    const url = new URL(window.location.href);
+    return url.searchParams.get('id');
 };
 
 const printMovieDetail = (movie) => {

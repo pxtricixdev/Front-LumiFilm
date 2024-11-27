@@ -12,8 +12,8 @@ const volverAtras = () => {
 
 //Obtenemos el id de la película desde la URL
 const getMovieIdFromUrl = () => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('id');
+    const url = new URL(window.location.href);
+    return url.searchParams.get('id');
 };
 
 //Formateamos las fechas para mostrar solo el día y el mes
