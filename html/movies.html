@@ -15,38 +15,24 @@
             <li class="header__item"><a href="./index.html">Home</a></li>
             <li class="header__item"><a href="./movies.html">Cartelera</a></li>
             <li class="header__item">
-                <a href="./index.html">
-                    Buscar
-                </a>
+                <button class="header__item__button" id="search-link">Buscar</button>
             </li>
         </ul>
     </header>
 
- 
-    <nav class="navbar">
-        <ul class="navbar__list">
-            <li class="navbar__item">
-                <a href="./index.html" class="navbar__link">
-                    <img class="navbar__svg" src="../assets/icons/home.svg" alt="svg logo home">
-                </a>
-            </li>
-            <li class="navbar__item">
-                <a href="./movies.html" class="navbar__link">
-                    <img class="navbar__svg" src="../assets/icons/claqueta.svg" alt="svg logo peliculas">
-                </a>
-            </li>
-            <li class="navbar__item">
-                <a href="/search" class="navbar__link">
-                    <img class="navbar__svg" src="../assets/icons/buscar.svg" alt="svg logo busqueda">
-                </a>
-            </li>
-            <li class="navbar__item">
-                <a href="/" class="navbar__link">
-                    <img class="navbar__svg" src="../assets/icons/ticket.svg" alt="svg logo ticket">
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <article class="modal">
+        <div class="modal__search">
+            <button class="modal__close" id="modal-close">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30.0002 10C29.6876 9.68755 29.2638 9.51202 28.8219 9.51202C28.3799 9.51202 27.9561 9.68755 27.6435 10L20.0002 17.6433L12.3569 10C12.0443 9.68755 11.6205 9.51202 11.1785 9.51202C10.7366 9.51202 10.3127 9.68755 10.0002 10C9.68773 10.3125 9.51221 10.7364 9.51221 11.1783C9.51221 11.6203 9.68773 12.0441 10.0002 12.3567L17.6435 20L10.0002 27.6433C9.68773 27.9559 9.51221 28.3797 9.51221 28.8217C9.51221 29.2636 9.68773 29.6875 10.0002 30C10.3127 30.3125 10.7366 30.488 11.1785 30.488C11.6205 30.488 12.0443 30.3125 12.3569 30L20.0002 22.3567L27.6435 30C27.9561 30.3125 28.3799 30.488 28.8219 30.488C29.2638 30.488 29.6876 30.3125 30.0002 30C30.3126 29.6875 30.4882 29.2636 30.4882 28.8217C30.4882 28.3797 30.3126 27.9559 30.0002 27.6433L22.3569 20L30.0002 12.3567C30.3126 12.0441 30.4882 11.6203 30.4882 11.1783C30.4882 10.7364 30.3126 10.3125 30.0002 10Z" fill="white"/>
+                </svg>
+            </button>
+            <div class="modal__input">
+                <input type="text" placeholder="Buscar película" id="search-movie">
+                <div class="modal__results" id="results"></div>
+            </div>
+        </div>
+    </article>
 
     <main class="main">
         <div class="headerMovies">
@@ -62,7 +48,30 @@
         </section>
     </main>
 
-    
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item">
+                <a href="./index.html" class="navbar__link">
+                    <img class="navbar__svg" src="../assets/icons/home.svg" alt="svg logo home">
+                </a>
+            </li>
+            <li class="navbar__item">
+                <a href="./movies.html" class="navbar__link">
+                    <img class="navbar__svg" src="../assets/icons/claqueta.svg" alt="svg logo peliculas">
+                </a>
+            </li>
+            <li class="navbar__item">
+                <button class="navbar__link" id="navbar-search">
+                    <img class="navbar__svg" src="../assets/icons/buscar.svg" alt="svg logo busqueda">
+                </button>
+            </li>
+            <li class="navbar__item">
+                <a href="/" class="navbar__link">
+                    <img class="navbar__svg" src="../assets/icons/ticket.svg" alt="svg logo ticket">
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <footer class="footer">
         <hr class="hrFooter">
@@ -77,10 +86,10 @@
                     <a href="../html/movies.html" class="footer__link">Cartelera</a>
                 </li>
                 <li class="footer__item">
-                    <a href="#" class="footer__link">Términos y condiciones</a>
+                    <a href="./terminos.html" class="footer__link">Términos y condiciones</a>
                 </li>
                 <li class="footer__item">
-                    <a href="#" class="footer__link">Política de privacidad</a>
+                    <a href="./politicas.html" class="footer__link">Política de privacidad</a>
                 </li>
             </ul>
             <ul class="footer__social-list">
@@ -103,7 +112,9 @@
         </nav>
     </footer>
 
+    <script src="../scripts/modalSearch.js"></script>
     <script src="../scripts/fetchPeliculas.js"></script>
     <script src="../scripts/movies.js"></script>
+    
 </body>
 </html>

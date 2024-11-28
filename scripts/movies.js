@@ -42,7 +42,7 @@ const printMovies = (movies) => {
         movieContent.classList.add('movies__content');
 
         const movieTitle = document.createElement('a');
-        movieTitle.href = `movieDetail.html?id=${id}`; // enlace en el titulo para que te lleve a ese detalle por la id
+        movieTitle.href = `movieDetail.html?id=${id}`; 
         movieTitle.textContent = titulo;
         movieTitle.classList.add('movies__title');
         movieContent.appendChild(movieTitle);

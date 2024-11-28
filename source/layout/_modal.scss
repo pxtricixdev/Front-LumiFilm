@@ -22,16 +22,21 @@
     &__close {
         background: rgba(255, 255, 255, 0.466);
         border-radius: 95px;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border: 0;
         position: absolute;
-        right: 25px;
-        top: 25px;
+        right: 20px;
+        top: 20px;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        &:hover {
+            background: #1c1a2956;
+            transition: ease-in-out 0.2s;
+        }
     }
 
     &__input {
@@ -40,7 +45,7 @@
             background: $white-color;
             border: none;
             border-radius: 20px;
-            padding: 10px 20px;
+            padding: 8px 20px;
             max-width: 400px;
             margin-left: 20px;
         }
@@ -53,6 +58,10 @@
         @include semibold-text(20px);
         display: flex;
         flex-direction: column;
+    }
+
+    .movie__results-title:hover {
+        color: black;
     }
 }
 

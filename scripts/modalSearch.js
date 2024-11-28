@@ -18,19 +18,19 @@ openSearchLink.addEventListener('click', () => {
 })
 
 //Traemos todas las películas de la api
-const api_pelis = 'https://localhost:7024/api/Pelicula/';
+const api_peliculas = 'https://localhost:7024/api/Pelicula/';
 let movies = [];
 
-const fetchPeliculas = async () => {
+const fetchPeliculasForModal = async () => {
     try {
-        const response = await fetch(api_pelis);
+        const response = await fetch(api_peliculas);
         movies = await response.json();
     } catch (error) {
         console.log("Error fetching data ", error);
     }
 };
 
-fetchPeliculas()
+fetchPeliculasForModal()
 
 //Búsqueda de la película
 const searchInput = document.getElementById('search-movie');

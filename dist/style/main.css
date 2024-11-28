@@ -272,16 +272,20 @@ body {
 .modal__close {
   background: rgba(255, 255, 255, 0.466);
   border-radius: 95px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 0;
   position: absolute;
-  right: 25px;
-  top: 25px;
+  right: 20px;
+  top: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.modal__close:hover {
+  background: rgba(28, 26, 41, 0.337254902);
+  transition: ease-in-out 0.2s;
 }
 .modal__input {
   padding-top: 25px;
@@ -290,7 +294,7 @@ body {
   background: #fff;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   max-width: 400px;
   margin-left: 20px;
 }
@@ -302,6 +306,9 @@ body {
   font-size: 20px;
   display: flex;
   flex-direction: column;
+}
+.modal .movie__results-title:hover {
+  color: black;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1105,6 +1112,7 @@ body {
   margin-top: 10px;
   color: #EB0033;
   font-size: 20px;
+  padding-top: 30px;
 }
 .policy__section {
   margin-top: 20px;
@@ -1142,6 +1150,7 @@ body {
   margin-top: 10px;
   color: #EB0033;
   font-size: 20px;
+  padding-top: 30px;
 }
 .terms__section {
   margin-top: 20px;
