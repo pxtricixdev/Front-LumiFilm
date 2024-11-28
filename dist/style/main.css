@@ -254,7 +254,7 @@ body {
 
 .modal {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .modal__search {
   width: 95%;
@@ -304,11 +304,10 @@ body {
   flex-direction: column;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 992px) {
   .modal__search {
-    margin-top: 50px;
-    width: 60%;
-    margin-left: 10px;
+    width: 40%;
+    margin: 54px auto;
   }
 }
 .homeBanner {
