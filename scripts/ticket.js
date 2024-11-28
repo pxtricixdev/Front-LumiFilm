@@ -5,7 +5,6 @@ const volverAtras = () => {
 
 var notyf = new Notyf();
 const peliculaSeleccionada = JSON.parse(localStorage.getItem('peliculaSeleccionada'));
-const sesionSeleccionada = sessionStorage.getItem('sesionSeleccionada');
 const asientosSeleccionados = JSON.parse(sessionStorage.getItem('asientosSeleccionados'));
 const salaSeleccionada = JSON.parse(sessionStorage.getItem('salaSeleccionada'));
 
@@ -16,32 +15,35 @@ formulario.addEventListener('submit', async (event) => {
     const formData = new FormData(event.target);
     const datos = Object.fromEntries(formData.entries());
 
+    const sesionSeleccionada = JSON.parse(sessionStorage.getItem('sesionSeleccionada')); // inicializar esta constante dentro del formulario
+
     const datosCompletos = {
-        pelicula: {
-            id: peliculaSeleccionada.id,
-            titulo: peliculaSeleccionada.titulo,
-            sinopsis: peliculaSeleccionada.sinopsis,
-            duracion: peliculaSeleccionada.duracion,
-            clasificacion: peliculaSeleccionada.clasificacion,
-            genero: peliculaSeleccionada.genero,
-            direccion: peliculaSeleccionada.direccion,
-            imagen: peliculaSeleccionada.imagen,
-        },
-        sala: {
-            id: salaSeleccionada, 
-        },
-        asientosReservados: asientosSeleccionados.map(asiento => ({
-            columna: asiento.columna,
-            fila: asiento.fila,
-            ocupado: true,
-            precio: asiento.precio,
-        })),
-        fechaTicket: new Date().toISOString(),
-        nombre: datos.nombre,
-        apellido: datos.apellido,
-        telefono: datos.tel,
-        mail: datos.email,
-        precioTotal: asientosSeleccionados.reduce((sum, asiento) => sum + parseFloat(asiento.precio), 0),
+    sesionId: sesionSeleccionada.id,  // Agregar el sesionId
+    pelicula: {
+        id: peliculaSeleccionada.id,
+        titulo: peliculaSeleccionada.titulo,
+        sinopsis: peliculaSeleccionada.sinopsis,
+        duracion: peliculaSeleccionada.duracion,
+        clasificacion: peliculaSeleccionada.clasificacion,
+        genero: peliculaSeleccionada.genero,
+        direccion: peliculaSeleccionada.direccion,
+        imagen: peliculaSeleccionada.imagen,
+    },
+    sala: {
+        id: sesionSeleccionada.sala,
+    },
+    asientosReservados: asientosSeleccionados.map(asiento => ({
+        columna: asiento.columna,
+        fila: asiento.fila,
+        ocupado: true,
+        precio: asiento.precio,
+    })),
+    fechaTicket: new Date().toISOString(),
+    nombre: datos.nombre,
+    apellido: datos.apellido,
+    telefono: datos.tel,
+    mail: datos.email,
+    precioTotal: asientosSeleccionados.reduce((sum, asiento) => sum + parseFloat(asiento.precio), 0),
     };
 
     try {

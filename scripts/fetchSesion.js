@@ -51,7 +51,6 @@ function agruparSesionesPorDia(sesiones) {
 //Pintamos los datos agrupados por día
 const printSesiones = (sesiones) => {
     const listaDias = document.querySelector('.sesiones__dia-list');
-
     const sesionesPorDia = agruparSesionesPorDia(sesiones);
 
     for (let dia in sesionesPorDia) {
@@ -132,13 +131,20 @@ const seleccionarAsiento = (asientoDiv, asiento) => {
 const horarioClick = async (sesionId) => {
     sessionStorage.removeItem('asientosSeleccionados');
 
+    const selectedSesion = sesionesData.find(s => s.id === sesionId);
+    if (!selectedSesion) {
+        console.error("Sesión no encontrada");
+        return;
+    }
+
+    sessionStorage.setItem('sesionSeleccionada', JSON.stringify(selectedSesion));
+    sessionStorage.setItem('salaSeleccionada', selectedSesion.sala);
+
     try {
         const response = await fetch(`https://localhost:7024/api/Asiento/sesion/${sesionId}`);
-        const sesion = await response.json();
+        const asientos = await response.json();
 
-        sessionStorage.setItem('sesionSeleccionada', sesionId);
-
-        printAsientos(sesion);
+        printAsientos(asientos);
     } catch (error) {
         console.error("Error al cargar los asientos:", error);
     }
@@ -146,17 +152,14 @@ const horarioClick = async (sesionId) => {
 
 
 //Fetch de sesiones por pelicula
+let sesionesData = [];
+
 const fetchSesionByMovie = async (movieId) => {
     try {
         const response = await fetch(`${api_sesion}${movieId}`);
         const sesiones = await response.json();
-        console.log(sesiones);
+        sesionesData = sesiones; // Almacenar sesiones
         printSesiones(sesiones);
-        sesiones.forEach(sesion => {
-            console.log("Sala asociada a la sesión:", sesion.sala);
-            sessionStorage.setItem('salaSeleccionada', JSON.stringify(sesion.sala));
-        });
-
     } catch (error) {
         console.log("Error fetching data: ", error);
     }
