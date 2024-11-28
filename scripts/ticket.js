@@ -18,7 +18,9 @@ formulario.addEventListener('submit', async (event) => {
     const sesionSeleccionada = JSON.parse(sessionStorage.getItem('sesionSeleccionada')); // inicializar esta constante dentro del formulario
 
     const datosCompletos = {
-    sesionId: sesionSeleccionada.id,  // Agregar el sesionId
+    sesionId: sesionSeleccionada.id,  
+    fecha: sesionSeleccionada.dia,
+    hora: sesionSeleccionada.hora,
     pelicula: {
         id: peliculaSeleccionada.id,
         titulo: peliculaSeleccionada.titulo,
