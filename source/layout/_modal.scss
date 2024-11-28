@@ -56,10 +56,16 @@
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .modal__search {
+        margin: 54px auto;
+    }
+ }
+
+
 @media only screen and (min-width: 992px) { 
     .modal__search {
         width: 40%;
-        margin: 54px auto;
     }
 }
 
