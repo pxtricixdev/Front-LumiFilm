@@ -25,9 +25,10 @@
             flex-direction: row;
             align-items: center;
             gap: 10px;
+            @include bold-text(16px);
             font-family: "Poppins", serif;
             text-transform: uppercase;
-            @include bold-text(16px);
+            
         }
 
         a:hover {
@@ -36,6 +37,21 @@
         }
         img {
             width: 100px;
+        }
+
+        &__button {
+            color: $white-color;
+            background: none;
+            border: none;
+            cursor: pointer;
+            @include bold-text(16px);
+            font-family: "Poppins", serif;
+            text-transform: uppercase;
+        }
+
+        &__button:hover {
+            color: $red-color;
+            transition: ease-in-out 0.2s;
         }
     }
 }

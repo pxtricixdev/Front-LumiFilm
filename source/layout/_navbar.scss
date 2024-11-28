@@ -27,6 +27,14 @@
         width: 25px;
         height: 25px;
     }
+
+    &__item {
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
 }
 
 @media only screen and (min-width: 769px) {

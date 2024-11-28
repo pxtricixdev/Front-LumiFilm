@@ -119,10 +119,10 @@ textarea:not([rows]) {
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  font-family: "Poppins", serif;
-  text-transform: uppercase;
   font-weight: 700;
   font-size: 16px;
+  font-family: "Poppins", serif;
+  text-transform: uppercase;
 }
 .header__item a:hover {
   color: #EB0033;
@@ -130,6 +130,20 @@ textarea:not([rows]) {
 }
 .header__item img {
   width: 100px;
+}
+.header__item__button {
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Poppins", serif;
+  text-transform: uppercase;
+}
+.header__item__button:hover {
+  color: #EB0033;
+  transition: ease-in-out 0.2s;
 }
 
 @media only screen and (max-width: 769px) {
@@ -223,6 +237,11 @@ textarea:not([rows]) {
   width: 25px;
   height: 25px;
 }
+.navbar__item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 @media only screen and (min-width: 769px) {
   .navbar {
@@ -233,6 +252,64 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+.modal {
+  display: flex;
+  justify-content: center;
+}
+.modal__search {
+  width: 95%;
+  max-height: 70%;
+  background-color: #EB0033;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  display: none;
+  border-radius: 20px;
+  margin: 10px;
+  padding-bottom: 20px;
+}
+.modal__close {
+  background: rgba(255, 255, 255, 0.466);
+  border-radius: 95px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal__input {
+  padding-top: 25px;
+}
+.modal__input input {
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  max-width: 400px;
+  margin-left: 20px;
+}
+.modal__results {
+  margin-top: 20px;
+  margin-left: 50px;
+  line-height: 30px;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 992px) {
+  .modal__search {
+    width: 40%;
+    margin: 54px auto;
+  }
+}
 .homeBanner {
   width: 100%;
   height: 350px;
