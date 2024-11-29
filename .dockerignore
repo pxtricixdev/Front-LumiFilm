@@ -4,3 +4,4 @@ package*.json
 source/
 .gitignore
 README.md
+.vscode
