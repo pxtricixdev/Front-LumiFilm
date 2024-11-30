@@ -1,0 +1,80 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.mainEntradas {
+    padding-top: 60px;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+
+    &__titulo {
+        color: $red-color;
+        text-align: center;
+        text-transform: uppercase;
+        @include bold-text(28px);
+    }
+
+    &__contenedor {
+        display: block;
+        margin-bottom: 100px;
+    }
+
+    &__content {
+        background-image: url(../../assets/images/ticket.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 450px;
+        margin: 40px auto;
+        border-radius: 15px;
+        color: $white-color;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__pelicula {
+        text-align: center;
+        color: $red-color;
+        padding: 15px;
+        @include bold-text(25px);
+    }
+
+    &__hora,
+    &__fecha,
+    &__sala,
+    &__asientos,
+    &__precio {
+        text-align: center;
+        padding: 8px;
+        @include semibold-text(19px);
+        font-style: italic;
+        max-width: 230px
+    }
+
+    &__precio {
+        @include regular-text(16px);
+    }
+
+    &__recordatorio {
+        text-align: left;
+        position: absolute;
+        bottom: 65px;
+        left: 60px;
+        width: 62%;
+        color: $grey-color;
+        @include semibold-text(9px);
+        font-style: italic;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .mainEntradas__contenedor {
+        display: flex;
+        margin-bottom: 330px;
+    }
+
+}

@@ -302,14 +302,12 @@ textarea:not([rows]) {
   justify-content: space-around;
   margin: 21px auto;
 }
+.navbar__item a {
+  cursor: pointer;
+}
 .navbar__svg {
   width: 25px;
   height: 25px;
-}
-.navbar__item button {
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
 @media only screen and (min-width: 769px) {
@@ -1101,6 +1099,76 @@ body {
   }
   .sesiones__icono, .sesiones__titulo {
     padding-top: 80px;
+  }
+}
+.mainEntradas {
+  padding-top: 60px;
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+.mainEntradas__titulo {
+  color: #EB0033;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 28px;
+}
+.mainEntradas__contenedor {
+  display: block;
+  margin-bottom: 100px;
+}
+.mainEntradas__content {
+  background-image: url(../../assets/images/ticket.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 450px;
+  margin: 40px auto;
+  border-radius: 15px;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mainEntradas__pelicula {
+  text-align: center;
+  color: #EB0033;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 25px;
+}
+.mainEntradas__hora, .mainEntradas__fecha, .mainEntradas__sala, .mainEntradas__asientos, .mainEntradas__precio {
+  text-align: center;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 19px;
+  font-style: italic;
+  max-width: 230px;
+}
+.mainEntradas__precio {
+  font-weight: 400;
+  font-size: 16px;
+}
+.mainEntradas__recordatorio {
+  text-align: left;
+  position: absolute;
+  bottom: 65px;
+  left: 60px;
+  width: 62%;
+  color: #38354B;
+  font-weight: 600;
+  font-size: 9px;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 768px) {
+  .mainEntradas__contenedor {
+    display: flex;
+    margin-bottom: 330px;
   }
 }
 .policy {
