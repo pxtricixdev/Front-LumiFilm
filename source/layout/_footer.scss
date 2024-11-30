@@ -46,6 +46,10 @@
     }
 
     &__social-item {
+        :hover {
+            @include image-hover-zoom(1.04, 0.3s);
+        }
+
         img {
             width: 30px;
             height: 30px;

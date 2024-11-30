@@ -257,6 +257,12 @@ textarea:not([rows]) {
   margin-bottom: 130px;
   padding-top: 20px;
 }
+.footer__social-item :hover {
+  transition: transform 0.3s ease-in-out;
+}
+.footer__social-item :hover:hover {
+  transform: scale(1.04);
+}
 .footer__social-item img {
   width: 30px;
   height: 30px;
@@ -828,10 +834,11 @@ body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    max-width: 100%;
+    max-width: 1200px;
     gap: 20px;
     margin: 0 auto;
-    margin-top: 125px;
+    margin-top: 200px;
+    margin-bottom: 180px;
   }
   .movie-detail__image {
     max-width: 25%;
@@ -845,16 +852,6 @@ body {
   }
 }
 @media only screen and (min-width: 992px) {
-  .movie-detail__container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 1200px;
-    gap: 30px;
-    margin: 0 auto;
-    margin-top: 125px;
-  }
   .movie-detail__content {
     width: 55%;
     padding: 0 20px;
@@ -865,13 +862,6 @@ body {
   }
 }
 @media only screen and (min-width: 1200px) {
-  .movie-detail__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 30px;
-    margin-top: 125px;
-    margin-bottom: 125px;
-  }
   .movie-detail__content {
     width: 60%;
   }
@@ -1168,7 +1158,7 @@ body {
 @media only screen and (min-width: 768px) {
   .mainEntradas__contenedor {
     display: flex;
-    margin-bottom: 330px;
+    margin-bottom: 250px;
   }
 }
 .policy {
