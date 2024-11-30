@@ -31,7 +31,7 @@ const printMovieDetail = (movie) => {
     const movieInfo = document.createElement('p');
     movieInfo.classList.add('movie-detail__info');
     movieInfo.innerHTML = `
-        <span class="movie-detail__clasificacion">${clasificacion}</span> |
+        <span class="movie-detail__clasificacion">+ ${clasificacion}</span> |
         <span class="movie-detail__duracion">${duracion} min</span> |
         <span class="movie-detail__genero">${genero}</span>
     `;

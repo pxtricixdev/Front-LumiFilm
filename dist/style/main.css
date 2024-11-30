@@ -363,6 +363,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .carousel {
@@ -569,7 +570,7 @@ body {
     font-size: 18px;
   }
   .homeMain__parrafo--semibold {
-    font-size: 18px;
+    font-size: 19px;
   }
   .masVisto__titulo,
   .proximamente__titulo {
@@ -660,7 +661,7 @@ body {
 .movies .moviesList .movie-card {
   border-radius: 10px;
   overflow: hidden;
-  width: 500px;
+  width: 350px;
   height: 300px;
   display: flex;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1031,10 +1032,12 @@ body {
   cursor: pointer;
   font-weight: 400;
   font-size: 18px;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
-.sesiones__horario-item:hover {
-  background-color: rgba(235, 0, 51, 0.7);
-  transition: ease-in-out 0.1s;
+.sesiones__horario-item:hover, .sesiones__horario-item:focus, .sesiones__horario-item:active {
+  background-color: rgba(235, 0, 51, 0.4);
+  color: #fff;
+  outline: none;
 }
 .sesiones__pantalla {
   margin: 0 auto;

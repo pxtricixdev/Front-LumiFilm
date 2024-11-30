@@ -61,12 +61,17 @@
         border-radius: 5%;
         background: $red-color;
         cursor: pointer;
-        @include regular-text(18px)
+        @include regular-text(18px);
+        transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+        
     }
 
-    &__horario-item:hover {
-        background-color: rgba($red-color, 0.7);
-        transition: ease-in-out 0.1s;
+    &__horario-item:hover,
+    &__horario-item:focus,
+    &__horario-item:active {
+        background-color: rgba($red-color, 0.4);
+        color: $white-color;
+        outline: none;
     }
 
     &__pantalla {
