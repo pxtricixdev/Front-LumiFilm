@@ -11,7 +11,6 @@
     }
 }
 
-
 .movies {
   margin-bottom: 150px;
 
@@ -108,7 +107,7 @@
     border-radius: 10px;
     overflow: hidden;
     width: 300px;
-    height: 270px;
+    height: 290px;
     display: flex;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 auto;
@@ -119,11 +118,6 @@
   }
 
 }
-
-@media only screen and (min-width: 992px) {
-
-}
-
 
 @media only screen and (min-width: 1200px) {
   
