@@ -3,12 +3,12 @@
 @use 'base/variables';
 
 @use 'components/buttons';
+@use 'components/modal';
 
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/navbar';
 @use 'layout/body';
-@use 'layout/modal';
 
 @use 'pages/home';
 @use 'pages/movies';
