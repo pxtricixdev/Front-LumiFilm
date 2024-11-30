@@ -69,6 +69,7 @@ formulario.addEventListener('submit', async (event) => {
             const result = await response.json();
             notyf.success('Compra realizada con éxito!');
             console.log('Datos enviados:', result);
+
         } else {
             const error = await response.json();
             notyf.error('Error en la compra: ' + error.message);

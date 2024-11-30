@@ -116,7 +116,7 @@ const printAsientos = (asientos) => {
             return;
         }
 
-    window.location.href = 'ticket.html';
+    window.location.href = 'pago.html';
     });
 };
 

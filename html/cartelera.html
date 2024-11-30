@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LumiFilm | Pelicula</title>
+    <title>LumiFilm | Cartelera</title>
     <link rel="stylesheet" href="../dist/style/main.css">
     <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 </head>
@@ -15,17 +15,13 @@
         <ul class="header__list">
             <li class="header__item"><img src="../assets/images/logo.webp" alt=""></li>
             <li class="header__item"><a href="./index.html">Home</a></li>
-            <li class="header__item"><a href="./movies.html">Cartelera</a></li>
+            <li class="header__item"><a href="./cartelera.html">Cartelera</a></li>
             <li class="header__item">
                 <a role="button" class="header__item__button" id="search-link">Buscar</a>
             </li>
             <li class="header__item"><a href="./entradas.html">Entradas</a></li>
         </ul>
     </header>
-
-    <main>
-        <section class="movie-detail" id="movieDetail"></section>
-    </main>
 
     <article class="modal">
         <div class="modal__search">
@@ -41,6 +37,20 @@
         </div>
     </article>
 
+    <main class="main">
+        <div class="headerMovies">
+            <section class = "contenedorTitulo">
+                <h1 class="contenedorTitulo__titulo"> CARTELERA </h1>
+            </section>
+        </div>
+    
+        <section class="movies" id="movies">
+            <ul class="moviesList" id="moviesList">
+                
+            </ul>
+        </section>
+    </main>
+
     <nav class="navbar">
         <ul class="navbar__list">
             <li class="navbar__item">
@@ -49,7 +59,7 @@
                 </a>
             </li>
             <li class="navbar__item">
-                <a href="./movies.html" class="navbar__link">
+                <a href="./cartelera.html" class="navbar__link">
                     <img class="navbar__svg" src="../assets/icons/claqueta.svg" alt="svg logo peliculas">
                 </a>
             </li>
@@ -76,7 +86,7 @@
                     </a>
                 </li>
                 <li class="footer__item">
-                    <a href="../html/movies.html" class="footer__link">Cartelera</a>
+                    <a href="./cartelera.html" class="footer__link">Cartelera</a>
                 </li>
                 <li class="footer__item">
                     <a href="./terminos.html" class="footer__link">Términos y condiciones</a>
@@ -105,8 +115,8 @@
         </nav>
     </footer>
 
-    <script src="../scripts/movieDetail.js"></script>
     <script src="../scripts/modalSearch.js"></script>
- 
+    <script src="../scripts/cartelera.js"></script>
+    
 </body>
 </html>

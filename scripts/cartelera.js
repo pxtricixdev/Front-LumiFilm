@@ -41,7 +41,7 @@ const printMovies = (movies) => {
 
         //hacemos la imagen que tenga enlace
         const movieLink = document.createElement('a');
-        movieLink.href = `movieDetail.html?id=${id}`;
+        movieLink.href = `pelicula.html?id=${id}`;
         movieLink.classList.add('movie-card__link');
 
         const movieImage = document.createElement('img');
