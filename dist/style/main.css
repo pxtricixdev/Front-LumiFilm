@@ -358,16 +358,16 @@ body {
   text-align: center;
   color: #fff;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 .homeMain__parrafo--semibold {
   text-align: center;
   color: #fff;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-style: italic;
 }
 
 .carousel {
@@ -380,7 +380,7 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   color: #EB0033;
-  margin-left: 30px;
+  margin-left: 4px;
   margin-bottom: 15px;
 }
 
@@ -402,7 +402,7 @@ body {
   color: #fff;
   position: absolute;
   bottom: 15px;
-  left: 30px;
+  left: 20px;
   font-weight: 600;
   font-size: 16px;
 }
@@ -438,15 +438,15 @@ body {
 .masVisto__titulo {
   color: #EB0033;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   padding-bottom: 5px;
-  padding-left: 5px;
+  padding-left: 16px;
 }
 .masVisto__parrafo {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 20px;
-  padding-left: 5px;
+  padding-left: 16px;
 }
 .masVisto__pelicula {
   width: 165px;
@@ -514,15 +514,17 @@ body {
 }
 .proximamente__titulo {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
   color: #EB0033;
   padding-bottom: 5px;
+  padding-left: 16px;
 }
 .proximamente__parrafo {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   color: #fff;
   margin-bottom: 20px;
+  padding-left: 16px;
 }
 .proximamente__grid {
   display: grid;
@@ -568,13 +570,13 @@ body {
     width: 175px;
   }
   .homeMain__titulo {
-    font-size: 26px;
+    font-size: 28px;
   }
   .homeMain__parrafo {
-    font-size: 18px;
+    font-size: 20px;
   }
   .homeMain__parrafo--semibold {
-    font-size: 19px;
+    font-size: 24px;
   }
   .masVisto__titulo,
   .proximamente__titulo {
@@ -815,7 +817,7 @@ body {
   color: #fff;
   text-align: justify;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
 }
 .movie-detail__actions {
   display: flex;
@@ -829,6 +831,9 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .movie-detail__sinopsis, .movie-detail__director {
+    font-size: 18px;
+  }
   .movie-detail__container {
     display: flex;
     flex-direction: row;
@@ -871,6 +876,17 @@ body {
   max-width: 306px;
   margin: 0 auto;
 }
+.compra__icono {
+  position: absolute;
+  left: 30px;
+  padding-top: 35px;
+  background: none;
+  border: none;
+}
+.compra__icono svg {
+  fill: #EB0033;
+  cursor: pointer;
+}
 .compra__titulo {
   text-transform: uppercase;
   font-size: 22px;
@@ -887,7 +903,7 @@ body {
   margin-bottom: 15px;
 }
 .compra__parrafo {
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   font-weight: 600;
   margin-bottom: 5px;
@@ -895,7 +911,7 @@ body {
 .compra__formulario-titulo {
   text-transform: uppercase;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin: 30px 0;
 }
@@ -905,14 +921,14 @@ body {
 }
 .compra__formulario-div label {
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
 .compra__formulario-div input {
   background: none;
   border: 0;
   border-bottom: 1px solid #EB0033;
-  color: #fff;
+  color: #ddd;
 }
 .compra__formulario-div input:focus {
   outline: none;
@@ -953,7 +969,10 @@ body {
 
 @media only screen and (min-width: 768px) {
   .compra {
-    max-width: 500px;
+    max-width: 600px;
+  }
+  .compra__icono {
+    padding-top: 50px;
   }
   .compra__terminos {
     max-width: 500px;
@@ -961,6 +980,24 @@ body {
   .compra__terminos label {
     font-weight: 400;
     font-size: 11px;
+  }
+  .compra__subtitulo {
+    font-size: 20px;
+  }
+  .compra__parrafo {
+    font-size: 18px;
+  }
+  .compra__terminos label {
+    font-size: 14px;
+  }
+  .compra__formulario-div input {
+    font-size: 18px;
+  }
+  .compra__formulario-div label {
+    font-size: 20px;
+  }
+  .compra__resumen-div {
+    font-size: 22px;
   }
 }
 .sesiones {
@@ -989,7 +1026,7 @@ body {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: space-evenly;
   padding: 60px 10px 15px 10px;
@@ -999,6 +1036,9 @@ body {
   font-size: 20px;
 }
 .sesiones__dia-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   background: none;
   border: none;
   color: #fff;
@@ -1009,7 +1049,6 @@ body {
   display: flex;
   flex-direction: row;
   gap: 25px;
-  margin-top: 5px;
 }
 .sesiones__horario-item {
   border: 0;
@@ -1022,10 +1061,13 @@ body {
   font-size: 18px;
   transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
-.sesiones__horario-item:hover, .sesiones__horario-item:focus, .sesiones__horario-item:active {
-  background-color: rgba(235, 0, 51, 0.4);
+.sesiones__horario-item:hover {
+  background-color: rgba(235, 0, 51, 0.7);
   color: #fff;
   outline: none;
+}
+.sesiones__horario-item.seleccionado {
+  background-color: rgba(56, 53, 75, 0.7);
 }
 .sesiones__pantalla {
   margin: 0 auto;
@@ -1092,7 +1134,6 @@ body {
   }
 }
 .mainEntradas {
-  padding-top: 60px;
   max-width: 1200px;
   text-align: center;
   margin: 0 auto;
@@ -1103,6 +1144,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 28px;
+  padding-top: 75px;
 }
 .mainEntradas__contenedor {
   display: block;
@@ -1123,6 +1165,10 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+.mainEntradas__content:hover {
+  transform: scale(1.02);
 }
 .mainEntradas__pelicula {
   text-align: center;

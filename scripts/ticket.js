@@ -7,6 +7,14 @@ var notyf = new Notyf();
 const peliculaSeleccionada = JSON.parse(localStorage.getItem('peliculaSeleccionada'));
 const asientosSeleccionados = JSON.parse(sessionStorage.getItem('asientosSeleccionados'));
 const salaSeleccionada = JSON.parse(sessionStorage.getItem('salaSeleccionada'));
+const precioTotal = document.getElementById('precio-total');
+
+const mostrarPrecioTotal = () => {
+    const precio = asientosSeleccionados.reduce((sum, asiento) => sum + parseFloat(asiento.precio), 0);
+    precioTotal.innerHTML = `${precio.toFixed(2)}€`;
+};
+
+mostrarPrecioTotal();
 
 const formulario = document.getElementById('datosFormulario')
 formulario.addEventListener('submit', async (event) => {
@@ -15,7 +23,7 @@ formulario.addEventListener('submit', async (event) => {
     const formData = new FormData(event.target);
     const datos = Object.fromEntries(formData.entries());
 
-    const sesionSeleccionada = JSON.parse(sessionStorage.getItem('sesionSeleccionada')); // inicializar esta constante dentro del formulario
+    const sesionSeleccionada = JSON.parse(sessionStorage.getItem('sesionSeleccionada')); 
 
     const datosCompletos = {
     sesionId: sesionSeleccionada.id,  
@@ -60,7 +68,7 @@ formulario.addEventListener('submit', async (event) => {
         if(response.ok) {
             const result = await response.json();
             notyf.success('Compra realizada con éxito!');
-            console.log('Respuesta de la API:', result);
+            console.log('Datos enviados:', result);
         } else {
             const error = await response.json();
             notyf.error('Error en la compra: ' + error.message);

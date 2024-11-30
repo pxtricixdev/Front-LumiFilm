@@ -66,7 +66,15 @@ const printSesiones = (sesiones) => {
             const itemHora = document.createElement('button');
             itemHora.classList.add('sesiones__horario-item');
             itemHora.textContent = formatHorario(hora.hora);
-            itemHora.onclick = () => horarioClick(hora.sesionId); 
+            itemHora.onclick = () => {
+                document.querySelectorAll('.sesiones__horario-item.seleccionado').forEach(item => {
+                    item.classList.remove('seleccionado');
+                });
+        
+                itemHora.classList.add('seleccionado');
+        
+                horarioClick(hora.sesionId);
+            };
             return itemHora;
         });
 
@@ -158,7 +166,7 @@ const fetchSesionByMovie = async (movieId) => {
     try {
         const response = await fetch(`${api_sesion}${movieId}`);
         const sesiones = await response.json();
-        sesionesData = sesiones; // Almacenar sesiones
+        sesionesData = sesiones; 
         printSesiones(sesiones);
     } catch (error) {
         console.log("Error fetching data: ", error);

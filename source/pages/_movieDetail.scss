@@ -55,7 +55,7 @@
     margin-bottom: 40px;
     color: $white-color;
     text-align: justify;
-    @include regular-text(15px)
+    @include regular-text(16px)
   }
 
   &__actions {
@@ -72,29 +72,37 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .movie-detail__container {
-    display: flex; 
-    flex-direction: row; 
-    align-items: flex-start; 
-    justify-content: center;
-    max-width: 1200px; 
-    gap: 20px; 
-    margin: 0 auto; 
-    margin-top: 200px;
-    margin-bottom: 180px;
-   
-  }
 
-  .movie-detail__image {
-    max-width: 25%;
-    max-height: 65%;
-    border-radius: 15px;
-  }
+  .movie-detail {
 
-  .movie-detail__content {
-    width: 50%; 
-    padding: 0 15px; 
-    text-align: left;
+    &__sinopsis,
+    &__director {
+      font-size: 18px;
+    }
+
+    &__container {
+      display: flex; 
+      flex-direction: row; 
+      align-items: flex-start; 
+      justify-content: center;
+      max-width: 1200px; 
+      gap: 20px; 
+      margin: 0 auto; 
+      margin-top: 200px;
+      margin-bottom: 180px;
+    }
+
+    &__image {
+      max-width: 25%;
+      max-height: 65%;
+      border-radius: 15px;
+    }
+
+    &__content {
+      width: 50%; 
+      padding: 0 15px; 
+      text-align: left;
+    }
   }
 }
 
