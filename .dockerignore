@@ -1,7 +1,22 @@
+# Dependency directories
 node_modules/
+
+# Gulpfile
 gulpfile.js
+
+# Package json
 package*.json
+
+# SCSS files
 source/
+
+# Git
+.git
 .gitignore
+
+# Editor configuration files
+.vscode/
+
+# Readme
 README.md
-.vscode
+
