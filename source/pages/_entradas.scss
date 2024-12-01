@@ -10,13 +10,21 @@
         color: $red-color;
         text-align: center;
         text-transform: uppercase;
-        @include bold-text(28px);
+        @include bold-text(30px);
         padding-top: 75px;
     }
 
     &__contenedor {
         display: block;
         margin-bottom: 180px;
+    }
+
+    &__empty {
+        text-align: center;
+        color: $white-color;
+        padding: 20px 20px;
+        @include semibold-text(20px);
+        margin-bottom: 600px;
     }
 
     &__content {
@@ -82,6 +90,7 @@
         display: flex;
         margin-bottom: 250px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
 }

@@ -1143,12 +1143,20 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 30px;
   padding-top: 75px;
 }
 .mainEntradas__contenedor {
   display: block;
   margin-bottom: 180px;
+}
+.mainEntradas__empty {
+  text-align: center;
+  color: #fff;
+  padding: 20px 20px;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 600px;
 }
 .mainEntradas__content {
   background-image: url(../../assets/images/ticket.png);
@@ -1209,6 +1217,7 @@ body {
     display: flex;
     margin-bottom: 250px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 .policy {
