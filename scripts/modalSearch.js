@@ -47,7 +47,7 @@ const renderMovies = (filteredMovies) => {
         const movieElement = document.createElement('a');
         movieElement.className = 'movie__results-title';
         movieElement.textContent = movie.titulo;
-        movieElement.href = `movieDetail.html?id=${movie.id}`;
+        movieElement.href = `pelicula.html?id=${movie.id}`;
         results.appendChild(movieElement);
     });
 };
