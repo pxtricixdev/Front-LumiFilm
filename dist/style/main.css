@@ -1148,7 +1148,7 @@ body {
 }
 .mainEntradas__contenedor {
   display: block;
-  margin-bottom: 100px;
+  margin-bottom: 180px;
 }
 .mainEntradas__content {
   background-image: url(../../assets/images/ticket.png);
@@ -1156,7 +1156,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   width: 300px;
-  height: 450px;
+  height: 500px;
   margin: 40px auto;
   border-radius: 15px;
   color: #fff;
@@ -1175,24 +1175,27 @@ body {
   color: #EB0033;
   padding: 15px;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 27px;
+}
+.mainEntradas__imagen {
+  width: 30%;
+  border-radius: 15px;
 }
 .mainEntradas__hora, .mainEntradas__fecha, .mainEntradas__sala, .mainEntradas__asientos, .mainEntradas__precio {
   text-align: center;
   padding: 8px;
   font-weight: 600;
-  font-size: 19px;
-  font-style: italic;
+  font-size: 22px;
   max-width: 230px;
 }
 .mainEntradas__precio {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
 }
 .mainEntradas__recordatorio {
   text-align: left;
   position: absolute;
-  bottom: 65px;
+  bottom: 74px;
   left: 60px;
   width: 62%;
   color: #38354B;

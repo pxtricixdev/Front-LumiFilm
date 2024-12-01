@@ -16,7 +16,7 @@
 
     &__contenedor {
         display: block;
-        margin-bottom: 100px;
+        margin-bottom: 180px;
     }
 
     &__content {
@@ -25,7 +25,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         width: 300px;
-        height: 450px;
+        height: 500px;
         margin: 40px auto;
         border-radius: 15px;
         color: $white-color;
@@ -41,7 +41,13 @@
         text-align: center;
         color: $red-color;
         padding: 15px;
-        @include bold-text(25px);
+        @include bold-text(27px);
+    }
+
+
+    &__imagen {
+        width: 30%;
+        border-radius: 15px;
     }
 
     &__hora,
@@ -51,19 +57,18 @@
     &__precio {
         text-align: center;
         padding: 8px;
-        @include semibold-text(19px);
-        font-style: italic;
+        @include semibold-text(22px);
         max-width: 230px
     }
 
     &__precio {
-        @include regular-text(16px);
+        @include regular-text(18px);
     }
 
     &__recordatorio {
         text-align: left;
         position: absolute;
-        bottom: 65px;
+        bottom: 74px;
         left: 60px;
         width: 62%;
         color: $grey-color;

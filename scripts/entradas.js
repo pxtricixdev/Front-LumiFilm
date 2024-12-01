@@ -20,7 +20,7 @@ const printTickets = (tickets) => {
 
         const asientos = asientosReservados
         .map(asiento => `${asiento.fila}${asiento.columna}`)
-        .join(' - ');
+        .join(', ');
 
         const content = document.createElement('div');
         content.classList.add('mainEntradas__content');
