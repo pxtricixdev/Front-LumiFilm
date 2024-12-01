@@ -8,6 +8,7 @@ El objetivo es desarrollar una plataforma moderna y funcional para mejorar la fo
 
 - **Facilidad de uso:** Experiencia de usuario intuitiva en todos los dispositivos.
 - **Diseño elegante:** Interfaz basada en una guía de estilo cohesiva y profesional.
+- **Enfoque Mobile First**: El diseño está optimizado para dispositivos móviles, garantizando accesibilidad desde cualquier pantalla.
 - **Desarrollar el frontend:** consumiendo un backend mediante una **API REST**.
 - **Desplegar:**  tanto localmente como en la nube.
 
@@ -35,7 +36,7 @@ Este repositorio corresponde **únicamente al frontend** del proyecto.
 - **Git y GitHub:** Para control de versiones con metodología **GitFlow**.
 - **Gulp:** Para automatizar tareas como la compilación de SASS.
 - **Docker**: Para contenerización y despliegue.
-- 
+
 ### Infraestructura:
 - **AWS EC2**: 
   - Contenerización del **frontend** y **backend** utilizando Docker.
@@ -46,10 +47,15 @@ Este repositorio corresponde **únicamente al frontend** del proyecto.
 
 Aquí tienes una vista previa de cómo luce **LumiFilm**:
 
-![Home LumiFilm](ruta/a/tu/mockup1.png)  
-![Selecciona tu película](ruta/a/tu/mockup2.png)
+### Versión móvil
+<img src="./assets/images/mock1.png" alt="Versión móvil" width="40%">
 
-*(Asegúrate de agregar las rutas correctas a tus imágenes)*
+### Versión escritorio
+<p align="center">
+  <img src="./assets/images/mock2.png" alt="Escritorio 1" width="30%" />
+  <img src="./assets/images/mock3.png" alt="Escritorio 2" width="30%" />
+  <img src="./assets/images/mock4.png" alt="Escritorio 3" width="30%" />
+</p>
 
 ---
 
@@ -60,16 +66,18 @@ Sigue estos pasos para iniciar el proyecto en tu máquina local:
 ### 1️⃣ Clonar el repositorio
 ```bash
     git clone https://github.com/pxtricixdev/Front-LumiFilm.git
-
-    2️⃣ Instalar las dependencias
-
+```
+    
+### 2️⃣ Instalar las dependencias
+```bash
     npm install
     npm install -g sass
     npm install -g gulp
+```
 
-    3️⃣ Compilar el SCSS a CSS
-    Para compilar los estilos, utiliza el siguiente comando:
-
+### 3️⃣ Compilar el SCSS a CSS
+ Para compilar los estilos, utiliza el siguiente comando:
+```bash
     gulp compilar-sass
 ```
 ---
