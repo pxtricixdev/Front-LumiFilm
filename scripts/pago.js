@@ -70,14 +70,18 @@ formulario.addEventListener('submit', async (event) => {
             notyf.success('Compra realizada con éxito!');
             console.log('Datos enviados:', result);
 
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000); 
+
         } else {
             const error = await response.json();
             notyf.error('Error en la compra: ' + error.message);
             console.error('Error en la API:', error);
         }
 
-        } catch (error) {
+    } catch (error) {
             console.error('Error en la solicitud:', error);
             notyf.error('No se pudo realizar la compra, inténtelo de nuevo: ' + error.message);
-        }
+    }
 });
