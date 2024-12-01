@@ -48,7 +48,7 @@ Este repositorio corresponde **únicamente al frontend** del proyecto.
 Aquí tienes una vista previa de cómo luce **LumiFilm**:
 
 ### Versión móvil
-<img src="./assets/images/mock1.png" alt="Versión móvil" width="40%">
+<img src="./assets/images/mock1.png" alt="Versión móvil" width="60%">
 
 ### Versión escritorio
 <p align="center">
