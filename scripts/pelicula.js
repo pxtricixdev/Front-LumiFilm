@@ -1,6 +1,5 @@
 const api_pelis = 'https://localhost:7024/api/Pelicula/';
 
-// Obtener el ID de la película desde la URL 
 const getMovieIdFromUrl = () => {
     const url = new URL(window.location.href);
     return url.searchParams.get('id');
@@ -10,7 +9,6 @@ const printMovieDetail = (movie) => {
     const movieDetail = document.getElementById('movieDetail'); 
     const { titulo, duracion, clasificacion, genero, imagen, sinopsis, direccion } = movie;
 
-    //contenedor peli
     const movieContainer = document.createElement('div');
     movieContainer.classList.add('movie-detail__container');
 
@@ -19,7 +17,6 @@ const printMovieDetail = (movie) => {
     movieImage.classList.add('movie-detail__image');
     movieContainer.appendChild(movieImage);
 
-    // Contenedor texto
     const movieContent = document.createElement('div');
     movieContent.classList.add('movie-detail__content');
 
@@ -37,7 +34,6 @@ const printMovieDetail = (movie) => {
     `;
     movieContent.appendChild(movieInfo);
 
-    // Sinopsis
     const movieSinopsisTitle = document.createElement('p');
     movieSinopsisTitle.classList.add('movie-detail__section-title');
     movieSinopsisTitle.textContent = 'Sinopsis:';
@@ -48,7 +44,6 @@ const printMovieDetail = (movie) => {
     movieSinopsis.textContent = sinopsis;
     movieContent.appendChild(movieSinopsis);
 
-    // Director
     const movieDirectorTitle = document.createElement('p');
     movieDirectorTitle.classList.add('movie-detail__section-title');
     movieDirectorTitle.textContent = 'Director:';
@@ -59,7 +54,6 @@ const printMovieDetail = (movie) => {
     movieDirector.textContent = direccion;
     movieContent.appendChild(movieDirector);
 
-    // Boton de compra
     const movieActions = document.createElement('div');
     movieActions.classList.add('movie-detail__actions');
 
@@ -71,14 +65,13 @@ const printMovieDetail = (movie) => {
     buyButton.addEventListener('click', redireccionAsientos);
 
     movieActions.appendChild(buyButton);
-
     movieContent.appendChild(movieActions);
-
     movieContainer.appendChild(movieContent);
     movieDetail.appendChild(movieContainer);
 };
 
-const buyButton = document.getElementById('movie-detail__buy')
+const buyButton = document.getElementById('movie-detail__buy');
+
 const redireccionAsientos = () => {
     const movieId = new URLSearchParams(window.location.search).get('id');
     if (movieId) {
@@ -101,6 +94,7 @@ const fetchPeliculaById = async (id) => {
 };
 
 const movieId = getMovieIdFromUrl();
+
 if (movieId) {
     fetchPeliculaById(movieId);
 }

@@ -75,8 +75,9 @@ formulario.addEventListener('submit', async (event) => {
             notyf.error('Error en la compra: ' + error.message);
             console.error('Error en la API:', error);
         }
-    } catch (error) {
-        console.error('Error en la solicitud:', error);
-        alert('No se pudo realizar la compra. Intenta de nuevo.');
-      }
+
+        } catch (error) {
+            console.error('Error en la solicitud:', error);
+            notyf.error('No se pudo realizar la compra, inténtelo de nuevo: ' + error.message);
+        }
 });

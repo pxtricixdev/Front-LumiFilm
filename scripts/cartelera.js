@@ -39,7 +39,6 @@ const printMovies = (movies) => {
         const movieItem = document.createElement('li');
         movieItem.classList.add('movie-card');
 
-        //hacemos la imagen que tenga enlace
         const movieLink = document.createElement('a');
         movieLink.href = `pelicula.html?id=${id}`;
         movieLink.classList.add('movie-card__link');
@@ -67,6 +66,7 @@ const printMovies = (movies) => {
             <span class="movies__value">${duracion}</span>
             <span class="movies__value">min</span>
         `;
+        
         movieContent.appendChild(movieDuration);
 
         const movieCategory = document.createElement('div');
@@ -75,6 +75,7 @@ const printMovies = (movies) => {
             <img src="../assets/icons/ticket.svg" alt="Genero">
             <span class="movies__value">${genero}</span>
         `;
+
         movieContent.appendChild(movieCategory);
 
         const moviePegi = document.createElement('div');

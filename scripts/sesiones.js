@@ -134,7 +134,6 @@ const seleccionarAsiento = (asientoDiv, asiento) => {
     sessionStorage.setItem('asientosSeleccionados', JSON.stringify(seleccionAsientos));
 };
 
-
 //Fetch de asientos por sesion
 const horarioClick = async (sesionId) => {
     sessionStorage.removeItem('asientosSeleccionados');
@@ -157,7 +156,6 @@ const horarioClick = async (sesionId) => {
         console.error("Error al cargar los asientos:", error);
     }
 };
-
 
 //Fetch de sesiones por pelicula
 let sesionesData = [];

@@ -17,7 +17,7 @@ openSearchLink.addEventListener('click', () => {
     modal.style.display = 'block';
 })
 
-//Traemos todas las películas de la api
+
 const api_peliculas = 'https://localhost:7024/api/Pelicula/';
 let movies = [];
 
@@ -32,7 +32,6 @@ const fetchPeliculasForModal = async () => {
 
 fetchPeliculasForModal()
 
-//Búsqueda de la película
 const searchInput = document.getElementById('search-movie');
 const results = document.getElementById('results')
 
