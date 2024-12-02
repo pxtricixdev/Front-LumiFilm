@@ -322,6 +322,7 @@ textarea:not([rows]) {
 }
 body {
   font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
 }
 
 .homeBanner {
@@ -660,7 +661,6 @@ body {
   justify-content: center;
   gap: 60px;
   flex-direction: column;
-  max-width: 300px;
   margin: 0 auto;
 }
 .movies .moviesList .movie-card {
@@ -672,6 +672,9 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 0 auto;
 }
+.movies .moviesList .movie-card__link {
+  margin-left: 15px;
+}
 .movies .moviesList .movie-card .movies__imagen {
   width: 200px;
   height: 100%;
@@ -680,11 +683,11 @@ body {
   border-radius: 10px;
 }
 .movies .moviesList .movie-card .movies__content {
-  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
+  padding-left: 31px;
 }
 .movies .moviesList .movie-card .movies__content .movies__title {
   font-size: 17px;

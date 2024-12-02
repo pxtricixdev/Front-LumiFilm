@@ -21,7 +21,6 @@
     justify-content: center;
     gap: 60px;
     flex-direction: column;
-    max-width: 300px;
     margin: 0 auto;
   
     .movie-card {
@@ -32,6 +31,10 @@
       display: flex;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin: 0 auto;
+
+      &__link {
+        margin-left: 15px;
+      }
   
       .movies__imagen {
         width: 200px;
@@ -42,11 +45,11 @@
       }
   
       .movies__content {
-        padding: 16px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         flex-grow: 1;
+        padding-left: 31px;
        
         .movies__title {
           font-size: 17px;
