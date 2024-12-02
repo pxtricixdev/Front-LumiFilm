@@ -322,7 +322,6 @@ textarea:not([rows]) {
 }
 body {
   font-family: "Nunito", sans-serif;
-  overflow-x: hidden;
 }
 
 .homeBanner {
@@ -449,7 +448,7 @@ body {
   padding-left: 16px;
 }
 .masVisto__pelicula {
-  width: 165px;
+  width: 155px;
   height: 278px;
   border-radius: 16px;
   position: relative;
@@ -490,7 +489,7 @@ body {
 }
 .masVisto__pelicula-datos {
   text-align: center;
-  width: 165px;
+  width: 155px;
   height: 55px;
   background-color: #38354B;
   border-radius: 0 0 16px 16px;
@@ -535,7 +534,7 @@ body {
   padding: 0px 10px;
 }
 .proximamente__elemento {
-  width: 165px;
+  width: 155px;
   height: 278px;
   border-radius: 16px;
   background-repeat: no-repeat;
@@ -559,6 +558,13 @@ body {
   background-image: url(../../assets/images/proximamente/winnie.webp);
 }
 
+@media only screen and (min-width: 425px) {
+  .masVisto__pelicula,
+  .masVisto__pelicula-datos,
+  .proximamente__elemento {
+    width: 165px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .masVisto__pelicula {
     width: 175px;
