@@ -5,6 +5,7 @@ const getMovieIdFromUrl = () => {
     return url.searchParams.get('id');
 };
 
+// Funcion para el detalle de las peliculas 
 const printMovieDetail = (movie) => {
     const movieDetail = document.getElementById('movieDetail'); 
     const { titulo, duracion, clasificacion, genero, imagen, sinopsis, direccion } = movie;
@@ -69,8 +70,7 @@ const printMovieDetail = (movie) => {
     movieContainer.appendChild(movieContent);
     movieDetail.appendChild(movieContainer);
 };
-
-const buyButton = document.getElementById('movie-detail__buy');
+ 
 
 const redireccionAsientos = () => {
     const movieId = new URLSearchParams(window.location.search).get('id');
@@ -81,11 +81,11 @@ const redireccionAsientos = () => {
     }
 }
 
+// Hacer la peticion a la api de pelis + id 
 const fetchPeliculaById = async (id) => {
     try {
         const response = await fetch(`${api_pelis}${id}`);
         const movie = await response.json();
-        console.log(movie)
         localStorage.setItem('peliculaSeleccionada', JSON.stringify(movie));
         printMovieDetail(movie);
     } catch (error) {

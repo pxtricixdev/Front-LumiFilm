@@ -1,16 +1,17 @@
 const api_pelis = 'https://localhost:7024/api/Pelicula/';
 
+// Peticion a la api de peliculas /GET
 const fetchPeliculas = async () => {
     try {
         const response = await fetch(api_pelis);
         const movies = await response.json();
-        console.log(movies);
         printMovies(movies);
     } catch (error) {
         console.log("Error fetching data ", error);
     }
 };
 
+// Función para elegir el svg segun la edad para la peli
 const clasificacionEdad = (clasificacion) => {
     let rutaImagenClasificacion = '';
     switch (clasificacion) {
@@ -30,6 +31,7 @@ const clasificacionEdad = (clasificacion) => {
     return `<img src="${rutaImagenClasificacion}" alt="Clasificación ${clasificacion}">`;
 };
 
+// Funcion para mostrar las peliculas 
 const printMovies = (movies) => {
     const moviesList = document.getElementById('moviesList');
 
@@ -80,7 +82,7 @@ const printMovies = (movies) => {
 
         const moviePegi = document.createElement('div');
         moviePegi.classList.add('movies__pegi');
-        moviePegi.innerHTML = clasificacionEdad(clasificacion);
+        moviePegi.innerHTML = clasificacionEdad(clasificacion); 
         movieContent.appendChild(moviePegi);
 
         movieItem.appendChild(movieContent);

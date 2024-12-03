@@ -12,7 +12,6 @@ const swiper = new Swiper('.swiper', {
         delay: 4000, 
     },
   
-  
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

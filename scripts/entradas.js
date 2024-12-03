@@ -1,10 +1,10 @@
 const api_tickets = 'https://localhost:7024/api/Ticket'
 
+// Peticion a la api del ticket GET
 const fetchTickets = async () => {
     try {
         const response = await fetch(api_tickets);
         const tickets = await response.json();
-        console.log(tickets);
         printTickets(tickets);
     
     } catch (error) {
@@ -12,6 +12,7 @@ const fetchTickets = async () => {
     }
 }
 
+// Pintar datos del ticket 
 const printTickets = (tickets) => {
     const contenedor = document.querySelector('.mainEntradas__contenedor');
     const noHayEntradas = document.createElement('p')
