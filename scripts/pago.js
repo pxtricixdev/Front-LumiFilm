@@ -4,6 +4,8 @@ const volverAtras = () => {
 };
 
 var notyf = new Notyf();
+
+//Recuperamos todos los datos de película, asientos reservados, sala y precio total
 const peliculaSeleccionada = JSON.parse(localStorage.getItem('peliculaSeleccionada'));
 const asientosSeleccionados = JSON.parse(sessionStorage.getItem('asientosSeleccionados'));
 const salaSeleccionada = JSON.parse(sessionStorage.getItem('salaSeleccionada'));
@@ -16,6 +18,7 @@ const mostrarPrecioTotal = () => {
 
 mostrarPrecioTotal();
 
+//Petición POST a la api con todos los datos
 const formulario = document.getElementById('datosFormulario')
 formulario.addEventListener('submit', async (event) => {
     event.preventDefault();

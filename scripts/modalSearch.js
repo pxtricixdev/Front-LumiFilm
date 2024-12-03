@@ -17,10 +17,9 @@ openSearchLink.addEventListener('click', () => {
     modal.style.display = 'block';
 })
 
-
+//Petición get de todas las películas y las guarda en la variable movies
 const api_peliculas = 'https://localhost:7024/api/Pelicula/';
 let movies = [];
-
 const fetchPeliculasForModal = async () => {
     try {
         const response = await fetch(api_peliculas);
@@ -29,12 +28,11 @@ const fetchPeliculasForModal = async () => {
         console.log("Error fetching data ", error);
     }
 };
-
 fetchPeliculasForModal()
 
+//Muestra las películas para las cuales se ha encontrado coincidencias
 const searchInput = document.getElementById('search-movie');
 const results = document.getElementById('results')
-
 const renderMovies = (filteredMovies) => {
     results.innerHTML = '';
 
@@ -52,13 +50,13 @@ const renderMovies = (filteredMovies) => {
     });
 };
 
+//Busca las películas que incluye la búsqueda del input
 searchInput.addEventListener('input', (event) => {
     const letter = event.target.value.toLowerCase();
     if (!letter.trim()) {
         results.innerHTML = ''; 
         return;
     }
-
     const filteredMovies = movies.filter(movie =>
         movie.titulo.toLowerCase().includes(letter)
     );
