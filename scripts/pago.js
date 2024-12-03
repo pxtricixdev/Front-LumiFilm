@@ -1,5 +1,8 @@
 const goBack = document.getElementById('go-back');
 const volverAtras = () => {
+    sessionStorage.removeItem('asientosSeleccionados');
+    sessionStorage.removeItem('sesionSeleccionada')
+    sessionStorage.removeItem('salaSeleccionada')
     window.history.back();
 };
 
