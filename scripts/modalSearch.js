@@ -18,7 +18,7 @@ openSearchLink.addEventListener('click', () => {
 })
 
 //Petición get de todas las películas y las guarda en la variable movies
-const api_peliculas = 'https://localhost:7024/api/Pelicula/';
+const api_peliculas = 'http://34.202.78.59:8080/api/Pelicula/';
 let movies = [];
 const fetchPeliculasForModal = async () => {
     try {

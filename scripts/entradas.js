@@ -1,4 +1,4 @@
-const api_tickets = 'https://localhost:7024/api/Ticket'
+const api_tickets = 'http://34.202.78.59:8080/api/Ticket'
 
 // Peticion a la api del ticket GET
 const fetchTickets = async () => {
