@@ -3,32 +3,41 @@ const btnSearch = document.getElementById('navbar-search')
 const openSearchLink = document.getElementById('search-link')
 const btnClose = document.getElementById('modal-close')
 
-//Abrir y cerrar el modal con el navbar de movil
-btnSearch.addEventListener('click', () => {
-    modal.style.display = 'block';
-})
-
-btnClose.addEventListener('click', () => {
-    modal.style.display = 'none'
-})
-
-//Abrir el modal con el link de buscar del header
-openSearchLink.addEventListener('click', () => {
-    modal.style.display = 'block';
-})
+// Variable para evitar múltiples llamadas a la API
+let movies = [];
+let isDataFetched = false;
 
 //Petición get de todas las películas y las guarda en la variable movies
 const api_peliculas = 'https://localhost:7024/api/Pelicula/';
-let movies = [];
 const fetchPeliculasForModal = async () => {
     try {
         const response = await fetch(api_peliculas);
         movies = await response.json();
+        isDataFetched = true;
     } catch (error) {
         console.log("Error fetching data ", error);
     }
 };
-fetchPeliculasForModal()
+
+// Abrir y cerrar el modal con el botón del navbar de móvil
+btnSearch.addEventListener('click', () => {
+    modal.style.display = 'block';
+    if (!isDataFetched) {
+        fetchPeliculasForModal();
+    }
+});
+
+btnClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Abrir el modal con el link de buscar del header
+openSearchLink.addEventListener('click', () => {
+    modal.style.display = 'block';
+    if (!isDataFetched) {
+        fetchPeliculasForModal();
+    }
+});
 
 //Muestra las películas para las cuales se ha encontrado coincidencias
 const searchInput = document.getElementById('search-movie');

@@ -65,8 +65,8 @@ const printMovies = (movies) => {
         movieDuration.classList.add('movies__duration');
         movieDuration.innerHTML = `
             <img src="../assets/icons/reloj.svg" alt="Duración">
-            <span class="movies__value">${duracion}</span>
-            <span class="movies__value">min</span>
+            <span class="movies__value">${duracion} </span>
+            <span class="movies__value__min">min</span>
         `;
         
         movieContent.appendChild(movieDuration);
